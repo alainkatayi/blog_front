@@ -1,10 +1,17 @@
 import { User } from "./user";
 
-export interface Artilce{
+export interface Article{
     id:number,
     title:string,
     introduction:string,
     content:string,
     created_at:string,
     created_by:User
+}
+
+export interface ArticleResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Article[];
 }
