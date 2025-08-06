@@ -1,16 +1,25 @@
-<nav class="flex justify-between items-center px-10 py-5 bg-white/30 backdrop-blur-md shadow-md">
-  <div class="text-xl font-bold">
-<div>
-  <a href="#" class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">
-    AK
-  </a>
-</div>
-
-</div>
-  <div class="flex space-x-10 font-medium">
-    <a href="#">Accueil</a>
-    <a href="#">Article</a>
-    <a href="#">À propos</a>
-    <a href="#">Contact</a>
+<header class="sticky top-0 z-50 w-full shadow-md bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+  <div class="container mx-auto max-w-6xl flex h-16 items-center justify-between px-4">
+    <a href="/" class="flex items-center space-x-2">
+      <span class="text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+    </svg>
+    </span>
+      <span class="text-xl font-bold text-blue-600">Alain Katayi </span>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-blue-600">Accueil</a>
+      <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">À propos</a>
+      <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">Articles</a>
+      <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">Projets</a>
+      <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">Contact</a>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden">
+      <!-- Menu icon ici -->
+    </button>
   </div>
-</nav>
+</header>
