@@ -21,10 +21,10 @@
             <a href="/" class="hover:text-white transition-colors">Accueil</a>
           </li>
           <li>
-            <a href="/a-propos" class="hover:text-white transition-colors">À propos</a>
+            <a class="hover:text-white transition-colors">À propos</a>
           </li>
           <li>
-            <a href="/articles" class="hover:text-white transition-colors">Articles</a>
+            <a [routerLink]="['/article-list']" class="hover:text-white transition-colors">Articles</a>
           </li>
           <li>
             <a href="/projets" class="hover:text-white transition-colors">Projets</a>
@@ -71,3 +71,4 @@
     </div>
   </div>
 </footer>
+
