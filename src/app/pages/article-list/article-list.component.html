@@ -1,0 +1,73 @@
+<app-header></app-header>
+
+<div class="min-h-screen py-12 px-4">
+  <div class="container mx-auto max-w-6xl">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">Articles</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Découvrez mes articles sur le développement web et la cybersécurité
+      </p>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="flex flex-col md:flex-row gap-4 mb-8">
+      <div class="relative flex-1">
+        <!-- Search icon -->
+        <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#a6a0a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </div>
+        <input type="text" placeholder="Rechercher des articles..."
+          class="w-full text-gray-500 pl-10 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+      </div>
+      <div class="flex gap-2">
+        <!-- Category Buttons -->
+        <button
+          class="px-4 py-2 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+          Tous
+        </button>
+        <button
+          class="px-4 py-2 text-sm font-medium rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
+          Développement Web
+        </button>
+        <button
+          class="px-4 py-2 text-sm font-medium rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
+          Cybersécurité
+        </button>
+      </div>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      @for (article of articles; track article.id) {
+      <app-article-card [article]="article"></app-article-card>
+      }
+    </div>
+
+    <!-- No articles found message (visible si filteredArticles.length === 0) -->
+    <div class="text-center py-12 hidden">
+      <p class="text-gray-500 text-lg">Aucun article trouvé pour votre recherche.</p>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center mt-1 mb-4 gap-3">
+  <button
+    class="px-4 py-2 text-sm font-medium rounded-md border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+    [disabled]="!prevPageUrl" (click)="goToPage(currentPage - 1)">
+    Précédent
+  </button>
+  <span class="px-4 py-2 text-sm font-medium rounded-md bg-blue-600 text-white border border-blue-600">
+    Page {{ currentPage }}
+  </span>
+  <button
+    class="px-4 py-2 text-sm font-medium rounded-md border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+    [disabled]="!nextPageUrl" (click)="goToPage(currentPage + 1)">
+    Suivant
+  </button>
+</div>
+
+
+
+<app-footer></app-footer>
