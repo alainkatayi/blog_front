@@ -11,8 +11,8 @@
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center space-x-6">
       <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-blue-600">Accueil</a>
-      <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">À propos</a>
-      <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">Articles</a>
+      <a [routerLink]="['/about']" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">À propos</a>
+      <a [routerLink]="['/article-list']" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">Articles</a>
       <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">Projets</a>
       <a href="#" class="text-sm font-medium transition-colors hover:text-blue-600 text-gray-600">Contact</a>
     </nav>
