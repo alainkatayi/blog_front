@@ -1,8 +1,10 @@
+import { Category } from "./category";
 import { User } from "./user";
 
 export interface Article{
     id:number,
     title:string,
+    category:Category
     introduction:string,
     content:string,
     created_at:string,
