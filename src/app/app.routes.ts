@@ -10,5 +10,11 @@ export const routes: Routes = [
         title:'Home',
         component:HomeComponent
     },
+    {
+        path:'article-list',
+        title:'Article',
+        loadComponent: () =>
+            import('../app/pages/article-list/article-list.component').then((m) => m.ArticleListComponent),
+    }
 
 ];
