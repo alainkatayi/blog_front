@@ -1,0 +1,221 @@
+<app-header></app-header>
+
+<div class="min-h-screen py-12 px-4">
+  <div class="container mx-auto max-w-4xl">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <div
+        class="w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+        <span class="text-4xl font-bold text-white">JD</span>
+      </div>
+      <h1 class="text-4xl font-bold mb-4">À Propos de Moi</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Développeur passionné par la création d'applications web sécurisées et performantes
+      </p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="border border-gray-200 rounded-lg shadow-sm bg-white mb-8">
+      <div class="p-6 pb-0">
+        <h2 class="text-xl font-semibold flex items-center gap-2">
+          <!-- Heart icon -->
+          <div class="w-5 h-5 text-red-500"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                  stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+            </svg></div>
+          Ma Passion
+        </h2>
+      </div>
+      <div class="p-6 pt-4">
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Salut ! Je suis Alain, un développeur web passionné par le développement d'applications et la cybersécurité.
+          Depuis plus de 2 ans, je crée des applications web modernes tout en gardant la sécurité au cœur de mes
+          préoccupations.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Mon objectif est de partager mes connaissances et d'aider la communauté des développeurs à créer des
+          applications plus sûres et plus performantes. J'aime explorer les nouvelles technologies et comprendre comment
+          les sécuriser efficacement.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Quand je ne code pas, vous me trouverez en train de lire sur les dernières vulnérabilités découvertes ou de
+          participer à des CTF (Capture The Flag) pour affûter mes compétences en sécurité.
+        </p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="border border-gray-200 rounded-lg shadow-sm bg-white mb-8">
+      <div class="flex items-center gap-3 p-6  pb-0">
+        <div class="w-5 h-5 text-black"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg> </div>
+        <h2 class="text-xl font-semibold flex items-center gap-2">
+          Compétences Techniques
+        </h2>
+      </div>
+      <div class="p-6 pt-4">
+        <div class="space-y-6">
+
+          <!-- Développement Web -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-4 h-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg></div>
+              <h3 class="font-semibold text-lg flex items-center gap-2">
+                Développement Web
+              </h3>
+            </div>
+
+
+            <div class="flex  flex-wrap gap-2">
+              @for (skill of skills; track skill.id) {
+
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
+                {{ skill.name}} </span>
+              }
+
+            </div>
+          </div>
+
+          <!-- Cybersécurité -->
+          <div>
+            <div class="flex items-center mb-3  gap-3">
+              <div class="w-4 h-4">
+                <span class="text-black"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                  </svg></span>
+              </div>
+              <h3 class="font-semibold text-lg flex items-center gap-2">Cybersécurité</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">OWASP</span>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Pentesting</span>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Cryptographie</span>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Sécurité
+                Web</span>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">JWT</span>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">HTTPS/TLS</span>
+            </div>
+          </div>
+
+          <!-- Outils & Technologies -->
+          <div>
+            <div class="flex items-center mb-3  gap-3">
+              <div class="w-6 h-4">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path fill="#000000"
+                    d="M256.1 161.1L256.1 210.7L256.6 211.2C263.1 128.8 332 64 416.1 64C436.2 64 455.5 67.7 473.2 74.5C483.2 78.3 485 91 477.5 98.6L388.8 187.3C385.8 190.3 384.1 194.4 384.1 198.6L384.1 240C384.1 248.8 391.3 256 400.1 256L441.5 256C445.7 256 449.8 254.3 452.8 251.3L541.5 162.6C549.1 155 561.8 156.9 565.6 166.9C572.4 184.6 576.1 203.9 576.1 224C576.1 284.6 542.4 337.4 492.6 364.5L574.1 446C592.8 464.7 592.8 495.1 574.1 513.9L514 574C495.3 592.7 464.9 592.7 446.1 574L320.1 448C292.7 420.6 286.5 380.1 301.6 346.7L210.9 256L161.3 256C150.6 256 140.6 250.7 134.7 241.8L55.4 122.9C51.2 116.6 52 108.1 57.4 102.7L102.8 57.3C108.2 51.9 116.6 51.1 123 55.3L241.9 134.5C250.8 140.4 256.1 150.4 256.1 161.1zM247.6 360.6C241.3 397.6 250 436.7 274 468L179 562.9C150.9 591 105.3 591 77.2 562.9C49.1 534.8 49.1 489.2 77.2 461.1L212.6 325.7L247.6 360.7z" />
+                </svg>
+              </div>
+
+              <h3 class="font-semibold text-lg mb-3 flex items-center gap-2">Outils & Technologies</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Git
+                et GitHub</span>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Linux</span>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">VS
+                Code</span>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Vercel</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="border border-gray-200 rounded-lg shadow-sm bg-white mb-8">
+      <div class="p-6 pb-0">
+        <h2 class="text-xl font-semibold flex items-center gap-2">
+          <!-- Coffee icon -->
+          <div class="w-5 h-5 text-amber-600">☕</div>
+          Expérience Professionnelle
+        </h2>
+      </div>
+      <div class="p-6 pt-4">
+        <div class="space-y-6">
+          <div class="border-l-2 border-blue-200 pl-4">
+
+            @for (experience of experiences; track experience.id) {
+
+            <h3 class="font-semibold text-lg"> {{ experience.job_title }} </h3>
+            <p class="text-blue-600 font-medium"> {{ experience.entreprise_name }} </p>
+            <p class="text-sm text-gray-500 mb-2"> {{ experience.start_date }} à {{ experience.end_date }} </p>
+            <p class="text-gray-700"> {{experience.description }} </p>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="border border-gray-200 rounded-lg shadow-sm bg-white mb-8">
+      <div class="p-6 pb-0">
+        <h2 class="text-xl font-semibold flex items-center gap-2">
+          <!-- Award icon -->
+          <div class="w-5 h-5 text-yellow-600">🏆</div>
+          Certifications
+        </h2>
+      </div>
+      <div class="p-6 pt-4">
+        <div class="grid md:grid-cols-2 gap-3">
+
+          @for (certification of certifications; track certification.id) {
+          <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
+            <div class="w-4 h-4 text-yellow-600">🏆</div>
+            <span class="text-sm font-medium"> {{ certification.name }} </span>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <h2 class="text-2xl font-bold mb-4">Travaillons Ensemble</h2>
+      <p class="text-gray-600 mb-6">
+        Vous avez un projet ou souhaitez discuter de développement web ou de cybersécurité ?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact"
+          class="inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+          Me Contacter
+        </a>
+        <a href="/projets"
+          class="inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
+          Voir Mes Projets
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

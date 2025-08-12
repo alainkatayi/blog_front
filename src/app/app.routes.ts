@@ -15,6 +15,12 @@ export const routes: Routes = [
         title:'Article',
         loadComponent: () =>
             import('../app/pages/article-list/article-list.component').then((m) => m.ArticleListComponent),
+    },
+    {
+        path:'about',
+        title:'about',
+        loadComponent: () =>
+            import('../app/pages/about/about.component').then((m) => m.AboutComponent),
     }
 
 ];
