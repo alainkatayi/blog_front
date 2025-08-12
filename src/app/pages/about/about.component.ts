@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ProfileService } from '../../core/services/profiles/profile.service';
-import { Certifications, Skills } from '../../core/models/profile';
+import { Certifications, Experiences, Skills } from '../../core/models/profile';
 
 @Component({
   selector: 'app-about',
@@ -13,12 +13,14 @@ import { Certifications, Skills } from '../../core/models/profile';
 export class AboutComponent {
   skills!:Skills[]
   certifications!:Certifications[]
+  experiences!:Experiences[]
 
   constructor(private profileService: ProfileService){}
 
   ngOnInit(){
     this.getSkills()
     this.getCertifications()
+    this.getExperiences()
  
   }
 
@@ -35,6 +37,14 @@ export class AboutComponent {
     this.profileService.getCertifications().subscribe({
       next:(response)=>{
         this.certifications = response
+      }
+    })
+  }
+
+  getExperiences(){
+    this.profileService.getExperiences().subscribe({
+      next:(response)=>{
+        this.experiences = response
       }
     })
   }

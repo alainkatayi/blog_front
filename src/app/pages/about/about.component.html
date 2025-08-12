@@ -163,6 +163,13 @@
         <div class="space-y-6">
           <div class="border-l-2 border-blue-200 pl-4">
 
+            @for (experience of experiences; track experience.id) {
+
+            <h3 class="font-semibold text-lg"> {{ experience.job_title }} </h3>
+            <p class="text-blue-600 font-medium"> {{ experience.entreprise_name }} </p>
+            <p class="text-sm text-gray-500 mb-2"> {{ experience.start_date }} à {{ experience.end_date }} </p>
+            <p class="text-gray-700"> {{experience.description }} </p>
+            }
           </div>
         </div>
       </div>
