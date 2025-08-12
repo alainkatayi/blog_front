@@ -6,3 +6,10 @@ export interface Skills{
     created_at:string
 }
 
+
+export interface Certifications{
+    id:number
+    name:string
+    organisme:string
+    obtaining_date:string
+}
