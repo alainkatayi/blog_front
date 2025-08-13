@@ -6,3 +6,7 @@ export interface AuthLoginResponse{
     user:User[]
 }
 
+export interface AuthLoginData{
+    username:string
+    password:string
+}
