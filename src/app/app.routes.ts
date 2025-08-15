@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ArticleCardComponent } from './components/article-card/article-card.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ArticleListComponent } from './pages/article-list/article-list.component';
+import { adminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
     {
@@ -21,6 +19,12 @@ export const routes: Routes = [
         title:'about',
         loadComponent: () =>
             import('../app/pages/about/about.component').then((m) => m.AboutComponent),
+    },
+    {
+        path:'login',
+        title:'login',
+        loadComponent: () =>
+            import('../app/pages/login/login.component').then((m) => m.LoginComponent),
     }
 
 ];
