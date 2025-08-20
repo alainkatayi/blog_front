@@ -4,10 +4,11 @@ import { ArticleService } from '../../core/services/articles/article.service';
 import { Article} from '../../core/models/article';
 import { ArticleCardComponent } from "../../components/article-card/article-card.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, ArticleCardComponent, FooterComponent],
+  imports: [HeaderComponent, ArticleCardComponent, FooterComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
