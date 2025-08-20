@@ -47,5 +47,12 @@ export const routes: Routes = [
         loadComponent: () =>
             import('../app/pages/admin/certification-list/certification-list.component').then((m) => m.CertificationListComponent),
     }
+    ,
+    {
+        path:'blog-aYdXmXiBn/experience-list',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/experience-list/experience-list.component').then((m) => m.ExperienceListComponent),
+    }
 
 ];
