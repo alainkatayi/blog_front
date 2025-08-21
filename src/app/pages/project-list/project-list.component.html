@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="min-h-screen py-12 px-4">
+    <div class="container mx-auto max-w-6xl">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Mes Projets</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Découvrez mes projets en développement web et cybersécurité
+            </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @for (project of projects; track project.id) {
+            <app-project-card [project]="project" ></app-project-card>
+
+            }
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
