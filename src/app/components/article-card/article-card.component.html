@@ -10,7 +10,7 @@
   </div>
 
   <!-- Titre -->
-  <a href="" class="text-lg font-semibold text-gray-900 mb-2 break-words hover:text-blue-600 transition">
+  <a [routerLink]="['/article-single',article.id]" class="text-lg font-semibold text-gray-900 mb-2 break-words hover:text-blue-600 transition">
     {{ article.title }}
   </a>
 
