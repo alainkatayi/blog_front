@@ -15,6 +15,12 @@ export const routes: Routes = [
             import('../app/pages/article-list/article-list.component').then((m) => m.ArticleListComponent),
     },
     {
+        path:'article-single/:id',
+        title:'Article',
+        loadComponent: () =>
+            import('../app/pages/article-single/article-single.component').then((m) => m.ArticleSingleComponent),
+    },
+    {
         path:'about',
         title:'about',
         loadComponent: () =>
