@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environnement } from '../../../../environnemnts/environnement';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ArticleResponse } from '../../models/article';
+import { Article, ArticleResponse } from '../../models/article';
 import { PaginatedResponse } from '../../models/pagination';
 
 @Injectable({
@@ -20,5 +20,9 @@ export class ArticleService {
       .set('page',page.toString())
       .set('page_size', page_size.toString())
     return this.http.get<PaginatedResponse>(`${this.url}article/?page=${page}`, {params})
+  }
+
+  getArticle(id:number):Observable<Article>{
+    return this.http.get<Article>(this.url + 'article/' + id)
   }
 }
