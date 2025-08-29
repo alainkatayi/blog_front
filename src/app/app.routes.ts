@@ -51,7 +51,14 @@ export const routes: Routes = [
         path:'blog-aYdXmXiBn/certification-list',
         title:'admin',
         loadComponent: () =>
-            import('../app/pages/admin/certification-list/certification-list.component').then((m) => m.CertificationListComponent),
+            import('../app/pages/admin/certification-list/certification-list.component').then((m) => m.CertificationListComponent ),
+    }
+    ,
+    {
+        path:'blog-aYdXmXiBn/create',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/article-create/article-create.component').then((m) => m.ArticleCreateComponent ),
     }
     ,
     {
