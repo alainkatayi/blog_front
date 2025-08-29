@@ -5,13 +5,15 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Article, ArticleResponse } from '../../models/article';
 import { PaginatedResponse } from '../../models/pagination';
+import { UserLocalService } from '../userLocal/user-local.service';
+import { Category } from '../../models/category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
   private url = environnement.apiUrl
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private userLocaService:UserLocalService) { }
 
   //function pour la récupération des tous les artilces depuis l'api
   getArticles(page:number= 1, page_size=6):Observable<PaginatedResponse>{
@@ -24,5 +26,14 @@ export class ArticleService {
 
   getArticle(id:number):Observable<Article>{
     return this.http.get<Article>(this.url + 'article/' + id)
+  }
+
+  getCategories(){
+    return this.http.get<Category[]>(this.url + 'article/category-list/')
+  }
+
+  createArticle(data:FormData){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.post(this.url + 'article/create/', data, {headers})
   }
 }
