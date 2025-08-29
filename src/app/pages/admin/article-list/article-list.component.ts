@@ -19,6 +19,8 @@ export class ArticleListComponent {
   nextPageUrl:string | null = null
   prevPageUrl:string | null = null
   totalCount = 0
+  articleId: number = -1;
+  DeleteModalOpen = false;
   constructor(private articleService:ArticleService){}
 
   ngOnInit(){
@@ -42,5 +44,31 @@ export class ArticleListComponent {
 
   goToPage(page: number) {
     this.getArticles(page);
+  }
+
+  deleteArticle(){
+    this.articleService.deleteArticle(this.articleId).subscribe({
+      next:(response)=>{
+        window.location.reload();
+        console.log(response)
+      },
+      error:(error)=>{
+        console.log(error)
+      }
+    })
+  }
+
+  openDeleteModal(id:number) {
+    this.DeleteModalOpen = true;
+    this.articleId = id;
+  }
+
+  confirmDelete() {
+    this.deleteArticle();
+    this.closeDeleteModal();
+  } 
+
+  closeDeleteModal() {
+    this.DeleteModalOpen = false;
   }
 }
