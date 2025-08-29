@@ -62,6 +62,13 @@ export const routes: Routes = [
     }
     ,
     {
+        path:'blog-aYdXmXiBn/edit/:id',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/article-edit/article-edit.component').then((m) => m.ArticleEditComponent ),
+    }
+    ,
+    {
         path:'blog-aYdXmXiBn/experience-list',
         title:'admin',
         loadComponent: () =>
