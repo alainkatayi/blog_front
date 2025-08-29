@@ -22,7 +22,7 @@ export class ArticleSingleComponent {
     this.getArticle()
   }
 
-  getArticle(){
+  getArticle():void{
     this.articleService.getArticle(this.articleId).subscribe({
       next:(response)=>{
         this.article = response
