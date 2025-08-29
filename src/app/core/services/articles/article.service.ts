@@ -36,4 +36,8 @@ export class ArticleService {
     const headers = this.userLocaService.getAuthHeaders()
     return this.http.post(this.url + 'article/create/', data, {headers})
   }
+  editArticle(id:number,data:FormData){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.put(this.url + 'article/'+id +'/update/', data, {headers})
+  }
 }
