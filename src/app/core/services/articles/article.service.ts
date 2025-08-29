@@ -40,4 +40,8 @@ export class ArticleService {
     const headers = this.userLocaService.getAuthHeaders()
     return this.http.put(this.url + 'article/'+id +'/update/', data, {headers})
   }
+  deleteArticle(id:number){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.delete(this.url + 'article/'+id +'/delete/',{headers})
+  }
 }
