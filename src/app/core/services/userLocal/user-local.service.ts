@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthLoginResponse } from '../../models/auth';
 import { json } from 'stream/consumers';
+import { HttpHeaders } from '@angular/common/http';
 const SESSION_KEY = 'userSession';
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,15 @@ export class UserLocalService {
     }
     const dataUser = localStorage.getItem(SESSION_KEY)
     return dataUser ? JSON.parse(dataUser) as AuthLoginResponse : null
+  }
+
+  getAuthHeaders():HttpHeaders {
+    const user = this.getUser();
+
+    return new HttpHeaders({
+      Accept :'application/json',
+      Authorization: `Bearer ${user?.access}`
+    })
+
   }
 }
