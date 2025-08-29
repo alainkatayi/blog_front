@@ -31,4 +31,9 @@ export class ArticleService {
   getCategories(){
     return this.http.get<Category[]>(this.url + 'article/category-list/')
   }
+
+  createArticle(data:FormData){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.post(this.url + 'article/create/', data, {headers})
+  }
 }
