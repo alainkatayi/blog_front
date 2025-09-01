@@ -88,5 +88,12 @@ export const routes: Routes = [
         loadComponent: () =>
             import('../app/pages/project-list/project-list.component').then((m) => m.ProjectListComponent),
     }
+    ,
+    {
+        path:'blog-aYdXmXiBn/project-list',
+        title:'project',
+        loadComponent: () =>
+            import('../app/pages/admin/project-list/project-list.component').then((m) => m.ProjectListComponent),
+    }
 
 ];
