@@ -2,13 +2,14 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ArticleService } from '../../../core/services/articles/article.service';
 import { Category } from '../../../core/models/category';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { response } from 'express';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-article-edit',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './article-edit.component.html',
   styleUrl: './article-edit.component.css'
 })
@@ -42,10 +43,10 @@ export class ArticleEditComponent {
     this.articleService.getCategories().subscribe({
       next: (response) => {
         this.category = response
-        console.log("list des categories", response)
+        console.log(" categories", response)
       },
       error: (error) => {
-        console.log("erreur", error)
+        console.log("error", error)
       }
     })
   }
@@ -67,11 +68,11 @@ export class ArticleEditComponent {
     if (this.editArticleForm.invalid) {
       this.showToast = true
       this.toastType = 'error'
-      this.toastMessage = "Veuillez remplir correctement le formulaire"
+      this.toastMessage = "Please fill out the form correctly"
       setTimeout(() => {
         this.showToast = false
       }, 2000)
-      console.log("erreur lors de la modification")
+      console.log("error")
     }
 
     const formValuer = this.editArticleForm.value
@@ -86,7 +87,7 @@ export class ArticleEditComponent {
       next: (response) => {
         this.isSubmited = false
         this.showToast = true
-        this.toastMessage = "Article modifié avec success"
+        this.toastMessage = "Article edited successfully"
         this.toastType = 'success'
 
         setTimeout(() => {
@@ -99,9 +100,9 @@ export class ArticleEditComponent {
       error: (error) => {
         this.isSubmited = false
         this.showToast = true
-        this.toastMessage = "Veuillez remplir correctement le formulaire"
+        this.toastMessage = "Please fill out the form correctly"
         this.toastType = 'error'
-        console.log("erreur de modification", error)
+        console.log("error", error)
       }
     })
 

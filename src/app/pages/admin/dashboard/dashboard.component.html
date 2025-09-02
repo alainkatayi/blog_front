@@ -5,8 +5,8 @@
         <!-- Header avec logo et boutons -->
         <div class="flex items-center justify-between mb-8">
             <div>
-                <h1 class="text-3xl font-bold text-gray-900 mb-2">Tableau de Bord Admin</h1>
-                <p class="text-gray-600">Gérez votre portfolio et votre contenu</p>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
+                <p class="text-gray-600">Manage your portfolio and content</p>
             </div>
             <div class="flex items-center gap-3">
                 <p class="flex items-center gap-2 p-4 bg-white shadow text-black rounded-md ">
@@ -98,7 +98,7 @@
             <div class="bg-white rounded-lg shadow border-gray-300 p-4">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-sm font-medium text-gray-600">Compétences</p>
+                        <p class="text-sm font-medium text-gray-600">Skills</p>
                         <p class="text-2xl font-bold text-gray-900">25</p>
                     </div>
                     <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
@@ -150,8 +150,8 @@
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg border border-gray-300 shadow">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-black">Actions Rapides</h3>
-                        <p class="text-sm text-gray-600">Créez rapidement du nouveau contenu</p>
+                        <h3 class="text-2xl font-semibold text-black">Quick Actions</h3>
+                        <p class="text-sm text-gray-600">Create new content quickly</p>
                     </div>
                     <div class="p-6">
                         <div class="grid md:grid-cols-2 gap-4">
@@ -170,9 +170,9 @@
                                     <div>
                                         <button [routerLink]="['/blog-aYdXmXiBn/create']"
                                             class="font-semibold text-gray-900 group-hover:text-red-600 transition-colors">
-                                            Créer un Article
+                                            Create an Article
                                         </button>
-                                        <p class="text-sm text-gray-600">Rédiger un nouvel article de blog</p>
+                                        <p class="text-sm text-gray-600">Write a new blog post</p>
                                     </div>
                                 </div>
                             </div>
@@ -192,9 +192,9 @@
                                     <div>
                                         <h3
                                             class="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
-                                            Ajouter un Projet
+                                            Add a Project
                                         </h3>
-                                        <p class="text-sm text-gray-600">Présenter un nouveau projet</p>
+                                        <p class="text-sm text-gray-600">Present a new project</p>
                                     </div>
                                 </div>
                             </div>
@@ -212,11 +212,11 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3
+                                        <a [routerLink]="['/blog-aYdXmXiBn/skills-list']"
                                             class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
-                                            Gérer les Compétences
-                                        </h3>
-                                        <p class="text-sm text-gray-600">Ajouter ou modifier des compétences</p>
+                                            Manage Skills
+                                        </a>
+                                        <p class="text-sm text-gray-600">Add or modify skills</p>
                                     </div>
                                 </div>
                             </div>
@@ -234,11 +234,11 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3
+                                        <button [routerLink]="['/blog-aYdXmXiBn/experience-create']"
                                             class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
-                                            Nouvelle Expérience
-                                        </h3>
-                                        <p class="text-sm text-gray-600">Ajouter une expérience professionnelle</p>
+                                            New Experience
+                                        </button>
+                                        <p class="text-sm text-gray-600">Add professional experience</p>
                                     </div>
                                 </div>
                             </div>
@@ -257,25 +257,22 @@
                         <div class="space-y-4">
                             <!-- Article publié -->
                             <div class="flex justify-between">
-                                <p class="text-sm font-medium text-gray-500">Vue Totales</p>
+                                <p class="text-sm font-medium text-gray-500">Total View</p>
                                 <p class="text-lg text-black font-bold">2,000</p>
                             </div>
                             <div class="flex justify-between">
-                                <p class="text-sm font-medium text-gray-500">Visiteurs</p>
+                                <p class="text-sm font-medium text-gray-500">Visitors</p>
                                 <p class="text-lg text-black font-bold">100</p>
                             </div>
                             <div class="flex justify-between">
-                                <p class="text-sm font-medium text-gray-500">Vue Projet</p>
+                                <p class="text-sm font-medium text-gray-500">Project View</p>
                                 <p class="text-lg text-black font-bold">90</p>
                             </div>
                             <div class="flex justify-between">
-                                <p class="text-sm font-medium text-gray-500">Article Populaire</p>
+                                <p class="text-sm font-medium text-gray-500">Popular Article</p>
                                 <p class="text-lg text-black font-bold">20</p>
                             </div>
-                            <div class="flex justify-between">
-                                <p class="text-sm font-medium text-gray-500">Vue Projet</p>
-                                <p class="text-lg text-black font-bold">200</p>
-                            </div>
+                         
                         </div>
                     </div>
                 </div>
@@ -288,8 +285,8 @@
         <div class="lg:col-span-2 mt-5">
             <div class="bg-white rounded-lg border border-gray-300 shadow">
                 <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-black">Gestion du Contenu</h3>
-                    <p class="text-sm text-gray-600">Accédez aux différentes sections de gestion </p>
+                    <h3 class="text-2xl font-semibold text-black">Content Management</h3>
+                    <p class="text-sm text-gray-600"> Access the different management sections</p>
                 </div>
                 <div class="p-6">
                     <div class="grid md:grid-cols-2 gap-4">
@@ -315,7 +312,7 @@
                                     <h3 class="font-semibold text-gray-900 group-hover:text-red-600 transition-colors">
                                         Articles
                                     </h3>
-                                    <p class="text-sm text-gray-600">Gérez les articles du blog </p>
+                                    <p class="text-sm text-gray-600"> Manage blog posts</p>
                                 </div>
                             </div>
                         </a>
@@ -348,7 +345,7 @@
                                     <h3 class="font-semibold text-gray-900 group-hover:text-red-600 transition-colors">
                                         Contact
                                     </h3>
-                                    <p class="text-sm text-gray-600">Informations de contact</p>
+                                    <p class="text-sm text-gray-600"> Contact information </p>
                                 </div>
                             </div>
                         </div>
@@ -376,7 +373,7 @@
                                         class="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
                                         Certifications
                                     </h3>
-                                    <p class="text-sm text-gray-600">Gérer les certifications </p>
+                                    <p class="text-sm text-gray-600"> Manage certifications </p>
                                 </div>
                             </div>
                         </a>
@@ -388,30 +385,15 @@
                                 <div
                                     class="w-7 h-7 rounded-lg  flex items-center justify-center group-hover:scale-110 transition-transform">
 
-                                    <svg class="w-10 h-10" viewBox="0 0 48 48" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                        </g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
-                                            <circle cx="24" cy="12" r="8" fill="#ffffff" stroke="#1b5606"
-                                                stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-                                            </circle>
-                                            <path d="M42 44C42 34.0589 33.9411 26 24 26C14.0589 26 6 34.0589 6 44"
-                                                stroke="#1b5606" stroke-width="4" stroke-linecap="round"
-                                                stroke-linejoin="round"></path>
-                                            <path d="M24 44L28 39L24 26L20 39L24 44Z" fill="#ffffff" stroke="#1b5606"
-                                                stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </g>
-                                    </svg>
+                               
+                                    <svg class="w-15 h-15" fill="#FB8C00" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 246" enable-background="new 0 0 256 246" xml:space="preserve" stroke="#FB8C00"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M254,150.588v93.343H53.545v-31.916h64.591v-28.727h60.744v-32.7H254z M113.175,18.875c0,9.282,7.524,16.806,16.806,16.806 s16.806-7.524,16.806-16.806s-7.524-16.806-16.806-16.806S113.175,9.593,113.175,18.875z M189.915,100.17 c-1.62,3.746-6.074,5.264-9.82,3.543l-31.182-14.68c-1.822-0.81-3.341-2.43-3.948-4.353L139.7,69.798l-7.289,36.463l24.593,0.506 c5.264,0.101,9.415,4.556,9.314,9.82l-1.316,50.999c-0.101,5.264-4.454,9.415-9.618,9.415c0,0-0.101,0-0.203,0 c-5.366-0.101-9.516-4.556-9.415-9.82l1.114-41.483l-30.668-0.709l-7.087,35.113c-0.304,1.417-0.911,2.936-1.721,4.151 l-26.224,37.721c-3.341,4.859-9.82,5.872-14.68,2.531c-4.758-3.341-5.872-9.82-2.43-14.579l24.908-35.494l15.963-90.455 L73.183,93.305c-0.556,0.513-1.173,0.919-1.823,1.224l2.972,2.972l-8.68,8.68l14.466,14.466L68.545,132.22L22.253,85.927 l11.573-11.573l14.466,14.466l8.68-8.68l4.843,4.842c0.369-0.79,0.883-1.527,1.553-2.164l39.78-37.769 c5.25-4.518,13.672-7.244,20.962-6.029l6.884,1.316c9.213,1.62,16.299,7.897,19.236,16.097l7.492,20.552l28.448,13.364 C189.915,91.97,191.535,96.424,189.915,100.17z M67.099,97.501L56.972,87.374l-5.063,5.063l10.127,10.127L67.099,97.501z M56.972,126.433l-2.893,2.893l-5.786-5.787l2.893-2.893l-17.36-17.36l-2.893,2.893l-5.787-5.787l2.893-2.893l-8.68-8.68L2,106.18 l46.293,46.293l17.36-17.36L56.972,126.433z"></path> </g></svg>
                                 </div>
                                 <div>
                                     <h3
-                                        class="font-semibold text-gray-900 group-hover:text-green-800 transition-colors">
+                                        class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
                                         Expérience
                                     </h3>
-                                    <p class="text-sm text-gray-600">Gérez les expérience</p>
+                                    <p class="text-sm text-gray-600"> Manage experiences</p>
                                 </div>
                             </div>
                         </a>
@@ -429,7 +411,7 @@
                                         class="font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors">
                                         Projects
                                     </h3>
-                                    <p class="text-sm text-gray-600">Gérez les projets</p>
+                                    <p class="text-sm text-gray-600"> Manage projects</p>
                                 </div>
                             </div>
                         </a>
