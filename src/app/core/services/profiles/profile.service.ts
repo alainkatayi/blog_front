@@ -3,25 +3,31 @@ import { Injectable } from '@angular/core';
 import { environnement } from '../../../../environnemnts/environnement';
 import { Observable } from 'rxjs';
 import { Certifications, Experiences, Skills } from '../../models/profile';
+import { UserLocalService } from '../userLocal/user-local.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
   private url = environnement.apiUrl
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private userLocaService: UserLocalService) { }
 
-  getSkills():Observable<Skills[]>{
+  getSkills(): Observable<Skills[]> {
     return this.http.get<Skills[]>(`${this.url}profile/skills/`)
   }
+  createSkills(data: FormData) {
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.post(this.url + 'profile/skills/create/', data, { headers })
+  }
 
-   getCertifications():Observable<Certifications[]>{
+  getCertifications(): Observable<Certifications[]> {
     return this.http.get<Certifications[]>(`${this.url}profile/certifications/`)
 
   }
 
-  
-  getExperiences():Observable<Experiences[]>{
+
+
+  getExperiences(): Observable<Experiences[]> {
     return this.http.get<Experiences[]>(`${this.url}profile/experiences/`)
   }
 
