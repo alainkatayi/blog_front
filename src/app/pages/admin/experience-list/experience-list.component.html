@@ -9,17 +9,17 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
-                Retour
+                Back
             </a>
             <div class="flex-1">
-                <h1 class="text-3xl font-bold text-gray-900">Expériences Professionnelles</h1>
-                <p class="text-gray-600">Gérez votre parcours professionnel</p>
+                <h1 class="text-3xl font-bold text-gray-900">Professional experiences</h1>
+                <p class="text-gray-600">Manage your career path</p>
             </div>
-            <button class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
+            <button [routerLink]="['/blog-aYdXmXiBn/experience-create']" class="flex items-center gap-2 px-4 py-2 bg-orange-600  text-white rounded-md hover:bg-orange-700 ">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
-                Ajouter une Expérience
+                Add Experience
             </button>
         </div>
 
@@ -56,7 +56,8 @@
                                             d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h4a2 2 0 012 2v1m-6 0h8m-9 0v10a2 2 0 002 2h8a2 2 0 002-2V7H7z" />
                                     </svg>
                                     <span>
-                                       {{ experience.start_date }} - <span *ngIf="experience.current_job === true" > Présent </span> <span *ngIf="experience.current_job === false" > {{ experience.end_date }} </span>
+                                       {{ experience.start_date }} - <span *ngIf="experience.end_date === null" > Présent </span>
+                                        <span *ngIf="experience.end_date != null" > {{ experience.end_date }} </span>
 
                                     </span>
                                 </div>
