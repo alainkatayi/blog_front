@@ -1,6 +1,7 @@
+import { CertificationCreateComponent } from './pages/admin/certification-create/certification-create.component';
+import { SkillCreateComponent } from './pages/admin/skill-create/skill-create.component';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { adminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
     {
@@ -55,11 +56,27 @@ export const routes: Routes = [
     }
     ,
     {
+        path:'blog-aYdXmXiBn/certification-create',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/certification-create/certification-create.component').then((m) => m.CertificationCreateComponent ),
+    }
+    ,
+    {
         path:'blog-aYdXmXiBn/create',
         title:'admin',
         loadComponent: () =>
             import('../app/pages/admin/article-create/article-create.component').then((m) => m.ArticleCreateComponent ),
     }
+
+    ,
+    {
+        path:'blog-aYdXmXiBn/skills-list',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/skills-list/skills-list.component').then((m) => m.SkillsListComponent ),
+    }
+
     ,
     {
         path:'blog-aYdXmXiBn/edit/:id',
