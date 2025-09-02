@@ -4,11 +4,12 @@ import { ArticleService } from '../../../core/services/articles/article.service'
 import { UserLocalService } from '../../../core/services/userLocal/user-local.service';
 import { CommonModule } from '@angular/common';
 import { Category } from '../../../core/models/category';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-article-create',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './article-create.component.html',
   styleUrl: './article-create.component.css'
 })
@@ -55,7 +56,7 @@ export class ArticleCreateComponent {
     if(this.createArticleForm.invalid){
       this.showToast = true
       this.toastType = 'error'
-      this.toastMessage = "Veuillez remplir correctement le formulaire"
+      this.toastMessage = "Please fill out the form correctly"
       setTimeout(()=>{
         this.showToast = false
       }, 2000)
@@ -74,7 +75,7 @@ export class ArticleCreateComponent {
       next:(response)=>{
         this.isSubmited = false
         this.showToast = true
-        this.toastMessage= "Article crée avec success"
+        this.toastMessage= "Article created successfully"
         this.toastType = 'success'
 
         setTimeout(()=>{
@@ -87,9 +88,9 @@ export class ArticleCreateComponent {
       error:(error) =>{
         this.isSubmited = false
         this.showToast = true
-        this.toastMessage ="Veuillez remplir correctement le formulaire"
+        this.toastMessage ="Please fill out the form correctly"
         this.toastType = 'error'
-        console.log("erreur de creation", error)
+        console.log("error", error)
       }
     })
   }
