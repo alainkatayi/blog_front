@@ -98,6 +98,13 @@ export const routes: Routes = [
         loadComponent: () =>
             import('../app/pages/admin/experience-list/experience-list.component').then((m) => m.ExperienceListComponent),
     }
+            ,
+    {
+        path:'blog-aYdXmXiBn/experience-create',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/experience-create/experience-create.component').then((m) => m.ExperienceCreateComponent),
+    }
     ,
     {
         path:'contact',
