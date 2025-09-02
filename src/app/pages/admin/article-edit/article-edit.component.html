@@ -12,14 +12,14 @@
 
 <div class="bg-gray-200 min-h-screen">
     <div class="container mx-auto px-4 py-8 max-w-3xl">
-        <h1 class="text-3xl font-bold text-center text-blue-600 mb-8">Modifier un Article</h1>
+        <h1 class="text-3xl font-bold text-center text-red-600 mb-8">Edit Article</h1>
 
         <form [formGroup]="editArticleForm" (ngSubmit)="onSubmit()" class="bg-white rounded-lg shadow-md p-6 md:p-8">
             <!-- Titre de l'article -->
             <div class="mb-6">
-                <label for="title" class="block text-gray-700 font-medium mb-2">Titre de l'article</label>
+                <label for="title" class="block text-gray-700 font-medium mb-2">Article Title</label>
                 <input type="text" id="title" formControlName="title"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition"
                     placeholder="Entrez un titre accrocheur" required>
             </div>
 
@@ -27,7 +27,7 @@
             <div class="mb-6">
                 <label for="introduction" class="block text-gray-700 font-medium mb-2">Introduction</label>
                 <textarea id="introduction" rows="3" formControlName="introduction"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition"
                     placeholder="Rédigez une introduction captivante" required></textarea>
             </div>
             <!-- Category -->
@@ -35,7 +35,7 @@
                 <label for="introduction" class="block text-gray-700 font-medium mb-2">Category</label>
 
                 <select id="category" type="number" formControlName="category_id"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition"
                     placeholder="Rédigez une introduction captivante" required>
                     <option value="">Selectionner une categorie </option>
                     <option *ngFor="let categories of category" [value]="categories.id"> {{ categories.name }} </option>
@@ -45,60 +45,21 @@
             <!-- Contenu avec barre d'outils -->
             <div class="mb-6">
 
-                <label for="content" class="block text-gray-700 font-medium mb-2">Contenu</label>
-
-                <!-- Barre d'outils d'édition -->
-                <div class="flex flex-wrap gap-2 mb-2 p-2 bg-gray-100 rounded-lg">
-                    <button type="button" class="format-btn p-2 rounded hover:bg-gray-200" data-command="bold"
-                        title="Gras">
-                        <i class="fas fa-bold"></i>
-                    </button>
-                    <button type="button" class="format-btn p-2 rounded hover:bg-gray-200" data-command="italic"
-                        title="Italique">
-                        <i class="fas fa-italic"></i>
-                    </button>
-                    <button type="button" class="format-btn p-2 rounded hover:bg-gray-200" data-command="underline"
-                        title="Souligné">
-                        <i class="fas fa-underline"></i>
-                    </button>
-                    <div class="border-l border-gray-300 mx-1"></div>
-                    <button type="button" class="format-btn p-2 rounded hover:bg-gray-200" data-command="justifyLeft"
-                        title="Aligner à gauche">
-                        <i class="fas fa-align-left"></i>
-                    </button>
-                    <button type="button" class="format-btn p-2 rounded hover:bg-gray-200" data-command="justifyCenter"
-                        title="Centrer">
-                        <i class="fas fa-align-center"></i>
-                    </button>
-                    <button type="button" class="format-btn p-2 rounded hover:bg-gray-200" data-command="justifyRight"
-                        title="Aligner à droite">
-                        <i class="fas fa-align-right"></i>
-                    </button>
-                    <div class="border-l border-gray-300 mx-1"></div>
-                    <button type="button" class="format-btn p-2 rounded hover:bg-gray-200"
-                        data-command="insertUnorderedList" title="Liste à puces">
-                        <i class="fas fa-list-ul"></i>
-                    </button>
-                    <button type="button" class="format-btn p-2 rounded hover:bg-gray-200"
-                        data-command="insertOrderedList" title="Liste numérotée">
-                        <i class="fas fa-list-ol"></i>
-                    </button>
-                </div>
-
+                <label for="content" class="block text-gray-700 font-medium mb-2">Content</label>
                 <!-- Éditeur de contenu -->
                 <textarea formControlName="content" id="content"
-                    class="w-full min-h-[200px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition content-editable"
+                    class="w-full min-h-[200px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition content-editable"
                     contenteditable="true" placeholder="Rédigez le contenu de votre article ici..."></textarea>
             </div>
 
             <!-- Boutons d'action -->
             <div class="flex justify-end gap-4 mt-8">
-                <button type="button"
+                <button [routerLink]="['/blog-aYdXmXiBn/article-list']" type="button"
                     class="px-6 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition">
-                    Annuler
+                    Cancel
                 </button>
                 <button [disabled]="isSubmited" type="submit"
-                    class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                    class="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
                     <span class="text-center" *ngIf="isSubmited">
 
                         <div role="status">
@@ -116,7 +77,7 @@
 
                     </span>
                     <span *ngIf="!isSubmited">
-                        Modifier l'article
+                        Publish the article
                     </span>
                 </button>
             </div>
