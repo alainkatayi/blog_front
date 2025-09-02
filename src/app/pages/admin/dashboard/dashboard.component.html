@@ -168,10 +168,10 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3
+                                        <button [routerLink]="['/blog-aYdXmXiBn/create']"
                                             class="font-semibold text-gray-900 group-hover:text-red-600 transition-colors">
                                             Créer un Article
-                                        </h3>
+                                        </button>
                                         <p class="text-sm text-gray-600">Rédiger un nouvel article de blog</p>
                                     </div>
                                 </div>
@@ -412,6 +412,24 @@
                                         Expérience
                                     </h3>
                                     <p class="text-sm text-gray-600">Gérez les expérience</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!--  project -->
+                        <a [routerLink]="['/blog-aYdXmXiBn/project-list']"
+                            class="p-4 border border-gray-300 rounded-lg hover:shadow-md transition-shadow cursor-pointer group">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-7 h-7 rounded-lg  flex items-center justify-center group-hover:scale-110 transition-transform">
+
+                                    <svg fill="#da8b01" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M280 752h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8zm192-280h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v184c0 4.4 3.6 8 8 8zm192 72h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v256c0 4.4 3.6 8 8 8zm216-432H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"></path> </g></svg>
+                                </div>
+                                <div>
+                                    <h3
+                                        class="font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors">
+                                        Projects
+                                    </h3>
+                                    <p class="text-sm text-gray-600">Gérez les projets</p>
                                 </div>
                             </div>
                         </a>
