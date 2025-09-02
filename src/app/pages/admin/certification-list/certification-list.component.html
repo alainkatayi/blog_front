@@ -10,23 +10,23 @@
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
-                    Retour
+                    Back
                 </button>
                 <div>
-                    <h1 class="text-3xl font-bold text-gray-900">Mes Certifications</h1>
-                    <p class="text-gray-600">Gérez vos certifications et qualifications professionnelles</p>
+                    <h1 class="text-3xl font-bold text-gray-900">My Certifications</h1>
+                    <p class="text-gray-600">Manage your professional certifications and qualifications</p>
                 </div>
             </div>
-            <button class="flex items-center gap-2 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700">
+            <button [routerLink]="['/blog-aYdXmXiBn/certification-create']" class="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
-                Nouvelle Certification
+                New Certification
             </button>
         </div>
 
         <!-- Liste des certifications -->
-        <div class="space-y-4">
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
 
             @for (certification of certifications; track certification.id) {
             <!-- Certification 1 - AWS Solutions Architect -->
@@ -71,15 +71,7 @@
 
                     <!-- Boutons d'action -->
                     <div class="flex items-center gap-2">
-                        <button class="p-2 text-blue-600 border border-blue-600 rounded-md hover:bg-blue-50"
-                            title="Voir le certificat">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                            </svg>
-                        </button>
+        
                         <button class="p-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-50"
                             title="Modifier">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

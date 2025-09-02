@@ -1,6 +1,6 @@
 <div *ngIf="showToast" class="fixed top-0 left-0 w-full z-50 flex justify-center">
     <div [ngClass]="{
-      'bg-green-500': toastType === 'success',
+      'bg-green-600': toastType === 'success',
       'bg-red-500': toastType === 'error'
     }"
         class="text-white px-6 py-3 rounded-b shadow-md w-full max-w-md mx-auto flex justify-between items-center animate-slide-down">
@@ -12,54 +12,37 @@
 
 <div class="bg-gray-200 min-h-screen">
     <div class="container mx-auto px-4 py-8 max-w-3xl">
-        <h1 class="text-3xl font-bold text-center text-red-600 mb-8">New Article</h1>
+        <h1 class="text-3xl font-bold text-center text-green-600 mb-8">New Certification </h1>
 
-        <form [formGroup]="createArticleForm" (ngSubmit)="onSubmit()" class="bg-white rounded-lg shadow-md p-6 md:p-8">
-            <!-- Titre de l'article -->
+        <form [formGroup]="createCertificationForm" (ngSubmit)="onSubmit()" class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- name  -->
             <div class="mb-6">
-                <label for="title" class="block text-gray-700 font-medium mb-2">Article Title</label>
-                <input type="text" id="title" formControlName="title"
-                    class=" text-gray-500  w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition"
-                    placeholder="Enter a catchy title" required>
+                <label for="title" class="block text-gray-700 font-medium mb-2">Certification name</label>
+                <input type="text" id="title" formControlName="name"
+                    class=" text-gray-500 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 transition"
+                    placeholder="Entrez le nom du skil" required>
             </div>
-
-            <!-- Introduction -->
             <div class="mb-6">
-                <label for="introduction" class="block text-gray-700 font-medium mb-2">Introduction</label>
-                <textarea id="introduction" rows="3" formControlName="introduction"
-                    class="text-gray-500 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition"
-                    placeholder="Write a captivating introduction" required></textarea>
+                <label for="title" class="block text-gray-700 font-medium mb-2">Organisme name  </label>
+                <input type="text" id="title" formControlName="organisme"
+                    class="text-gray-500 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 transition"
+                    placeholder="Entrez le nom organisme" required>
             </div>
-            <!-- Category -->
             <div class="mb-6">
-                <label for="introduction" class="block text-gray-700 font-medium mb-2">Category</label>
-
-                <select id="category" type="number" formControlName="category_id"
-                    class="text-gray-500 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition"
-                    required>
-                    <option value="">Selectionner une categorie </option>
-                    <option *ngFor="let categories of category" [value]="categories.id"> {{ categories.name }} </option>
-                </select>
-            </div>
-
-            <!-- Contenu avec barre d'outils -->
-            <div class="mb-6">
-
-                <label for="content" class="block text-gray-700 font-medium mb-2">Content</label>
-                <!-- Éditeur de contenu -->
-                <textarea formControlName="content" id="content"
-                    class="text-gray-500 w-full min-h-[200px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition content-editable"
-                    contenteditable="true" placeholder="Write your article content here..."></textarea>
+                <label for="title" class="block text-gray-700 font-medium mb-2">Obataining date</label>
+                <input type="date"  id="title" formControlName="obtaining_date"
+                    class=" text-gray-500 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 transition"
+                    placeholder="Entrez le nom organisme" required>
             </div>
 
             <!-- Boutons d'action -->
             <div class="flex justify-end gap-4 mt-8">
-                <button [routerLink]="['/blog-aYdXmXiBn/article-list']" type="button"
+                <a [routerLink]="['/blog-aYdXmXiBn/certification-list']" type="button"
                     class="px-6 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition">
                     Cancel
-                </button>
+                </a>
                 <button [disabled]="isSubmited" type="submit"
-                    class="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                    class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
                     <span class="text-center" *ngIf="isSubmited">
 
                         <div role="status">
@@ -77,7 +60,7 @@
 
                     </span>
                     <span *ngIf="!isSubmited">
-                        Publish the article
+                        Add Certification
                     </span>
                 </button>
             </div>
