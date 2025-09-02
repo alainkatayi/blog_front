@@ -26,9 +26,13 @@ export class ProfileService {
   }
 
 
-
   getExperiences(): Observable<Experiences[]> {
     return this.http.get<Experiences[]>(`${this.url}profile/experiences/`)
+  }
+    createExperience(data:FormData){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.post(this.url + 'profile/experiences/create/', data, { headers })
+
   }
 
 

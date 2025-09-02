@@ -76,6 +76,13 @@ export const routes: Routes = [
         loadComponent: () =>
             import('../app/pages/admin/skills-list/skills-list.component').then((m) => m.SkillsListComponent ),
     }
+        ,
+    {
+        path:'blog-aYdXmXiBn/skills-create',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/skill-create/skill-create.component').then((m) => m.SkillCreateComponent ),
+    }
 
     ,
     {
@@ -90,6 +97,13 @@ export const routes: Routes = [
         title:'admin',
         loadComponent: () =>
             import('../app/pages/admin/experience-list/experience-list.component').then((m) => m.ExperienceListComponent),
+    }
+            ,
+    {
+        path:'blog-aYdXmXiBn/experience-create',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/experience-create/experience-create.component').then((m) => m.ExperienceCreateComponent),
     }
     ,
     {
