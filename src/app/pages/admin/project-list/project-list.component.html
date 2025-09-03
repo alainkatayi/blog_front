@@ -10,24 +10,24 @@
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
-                    Retour
+                    Back
                 </a>
                 <div>
-                    <h1 class="text-3xl font-bold text-gray-900">Gestion de Projets</h1>
-                    <p class="text-gray-600">Créez et gérez les projets affichés sur votre blog</p>
+                    <h1 class="text-3xl font-bold text-gray-900">Project Management</h1>
+                    <p class="text-gray-600">Create and manage projects displayed on your blog</p>
                 </div>
             </div>
-            <a [routerLink]="['/blog-aYdXmXiBn/create']"
+            <a [routerLink]="['/blog-aYdXmXiBn/createProject']"
                 class="flex items-center gap-2 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
-                Nouveau Project
+                New Project
             </a>
         </div>
 
         <!-- Liste des projects -->
-        <div class="space-y-4">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <!-- projects 1 - Info -->
             @for (project of projects; track project.id) {
