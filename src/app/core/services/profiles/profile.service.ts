@@ -19,6 +19,14 @@ export class ProfileService {
     const headers = this.userLocaService.getAuthHeaders()
     return this.http.post(this.url + 'profile/skills/create/', data, { headers })
   }
+  editSkill(id:number,data:FormData){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.put(this.url + 'profile/'+ id +'/skills/update/', data, { headers })
+  }
+
+  getSkill(id:number){
+    return this.http.get(this.url + 'profile/'+ id +'/skill/')
+  }
 
   getCertifications(): Observable<Certifications[]> {
     return this.http.get<Certifications[]>(`${this.url}profile/certifications/`)
