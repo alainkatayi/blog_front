@@ -91,6 +91,14 @@ export const routes: Routes = [
             import('../app/pages/admin/skill-create/skill-create.component').then((m) => m.SkillCreateComponent ),
     }
 
+            ,
+    {
+        path:'blog-aYdXmXiBn/edit-skill/:id',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/skill-edit/skill-edit.component').then((m) => m.SkillEditComponent ),
+    }
+
     ,
     {
         path:'blog-aYdXmXiBn/edit/:id',
