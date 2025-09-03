@@ -56,5 +56,13 @@ export class ProfileService {
 
   }
 
+  editExperience(id:number,data:FormData){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.put(this.url + 'profile/'+ id +'/experiences/update/', data, { headers })
+  }
+
+  getExperience(id:number){
+    return this.http.get(this.url + 'profile/'+ id +'/experience/')
+  }
 
 }
