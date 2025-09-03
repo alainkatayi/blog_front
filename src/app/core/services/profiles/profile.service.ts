@@ -29,6 +29,14 @@ export class ProfileService {
     return this.http.post(this.url + 'profile/certification/create/', data, { headers })
 
   }
+  editCertification(id:number,data:FormData){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.put(this.url + 'profile/'+ id +'/certifications/update/', data, { headers })
+
+  }
+  getCertification(id:number){
+    return this.http.get(this.url + 'profile/'+ id +'/certification/')
+  }
 
 
   getExperiences(): Observable<Experiences[]> {

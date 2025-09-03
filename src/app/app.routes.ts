@@ -61,6 +61,13 @@ export const routes: Routes = [
         loadComponent: () =>
             import('../app/pages/admin/certification-create/certification-create.component').then((m) => m.CertificationCreateComponent ),
     }
+        ,
+    {
+        path:'blog-aYdXmXiBn/edit-certification/:id',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/certification-edit/certification-edit.component').then((m) => m.CertificationEditComponent ),
+    }
     ,
     {
         path:'blog-aYdXmXiBn/create',
