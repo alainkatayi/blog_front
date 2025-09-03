@@ -126,5 +126,12 @@ export const routes: Routes = [
         loadComponent: () =>
             import('../app/pages/admin/project-list/project-list.component').then((m) => m.ProjectListComponent),
     }
+        ,
+    {
+        path:'blog-aYdXmXiBn/createProject',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/project-create/project-create.component').then((m) => m.ProjectCreateComponent ),
+    }
 
 ];
