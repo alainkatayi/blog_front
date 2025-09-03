@@ -122,6 +122,13 @@ export const routes: Routes = [
     }
     ,
     {
+        path:'blog-aYdXmXiBn/experience-edit/:id',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/experience-edit/experience-edit.component').then((m) => m.ExperienceEditComponent),
+    }
+    ,
+    {
         path:'contact',
         title:'contact',
         loadComponent: () =>
