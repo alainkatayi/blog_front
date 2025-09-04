@@ -20,4 +20,12 @@ export class ProjectService {
     const headers= this.userLocalService.getAuthHeaders()
     return  this.http.post(this.url + 'project/create/', data, {headers})
   }
+  editProject(id:number,data:FormData){
+    const headers = this.userLocalService.getAuthHeaders()
+    return this.http.put(this.url + 'project/'+ id +'/update/', data, { headers })
+  }
+
+  getProject(id:number){
+    return this.http.get(this.url + 'project/'+ id +'/')
+  }
 }
