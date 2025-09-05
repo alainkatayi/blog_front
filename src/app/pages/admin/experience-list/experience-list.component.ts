@@ -14,25 +14,53 @@ import { RouterLink } from '@angular/router';
 })
 export class ExperienceListComponent {
   experiences!: Experiences[]
-  isCurrentJob!:Experiences[]
-  currentJbo !:Boolean
+  isCurrentJob!: Experiences[]
+  currentJbo !: Boolean
+  DeleteModalOpen=false
+  experienceId:number=-1
 
-  constructor(private profileService:ProfileService) {}
+  constructor(private profileService: ProfileService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getExperience()
   }
 
-  getExperience(){
+  getExperience() {
     this.profileService.getExperiences().subscribe({
-      next:(response)=>{
+      next: (response) => {
         this.experiences = response
         this.isCurrentJob = response
         console.log(response)
       },
-      error:(error)=>{
+      error: (error) => {
         console.error(error)
       }
     })
+  }
+
+  deleteSkill() {
+    this.profileService.deleteExperience(this.experienceId).subscribe({
+      next: (response) => {
+        window.location.reload();
+        console.log(response)
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    })
+  }
+
+  openDeleteModal(id: number) {
+    this.DeleteModalOpen = true;
+    this.experienceId = id;
+  }
+
+  confirmDelete() {
+    this.deleteSkill();
+    this.closeDeleteModal();
+  }
+
+  closeDeleteModal() {
+    this.DeleteModalOpen = false;
   }
 }
