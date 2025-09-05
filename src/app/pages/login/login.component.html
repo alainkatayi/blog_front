@@ -1,8 +1,17 @@
+
 <!-- Structure principale de la page - centrée verticalement et horizontalement -->
 <div class="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
   <div class="w-full max-w-md">
     
-    <!-- Header -->
+    <div *ngIf="showToast" class="fixed top-4 left-0 w-full z-50 flex justify-center">
+    <div [ngClass]="{
+      'bg-green-500': toastType === 'success',
+      'bg-red-500': toastType === 'error'
+    }"
+        class="text-white px-6 py-3 rounded shadow-md w-full max-w-md mx-auto flex justify-between items-center animate-slide-down">
+        <p class="text-lg text-center font-semibold">{{ toastMessage }}</p>
+    </div>
+</div>
 
 
     <!-- Card du formulaire de connexion avec ombre renforcée -->

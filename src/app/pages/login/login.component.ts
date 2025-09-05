@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,9 +7,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthentificationsService } from '../../core/services/authentifications/authentifications.service';
-import { Router } from 'express';
 import { AuthLoginData, AuthLoginResponse } from '../../core/models/auth';
 import { UserLocalService } from '../../core/services/userLocal/user-local.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -21,6 +22,11 @@ import { UserLocalService } from '../../core/services/userLocal/user-local.servi
 export class LoginComponent {
   loginForm: FormGroup;
   isLoading= false
+  showToast=false
+  toastType:'error'|'success' = 'success'
+  toastMessage=''
+  private router = inject(Router)
+
 
   constructor(private fb:FormBuilder, private authService:AuthentificationsService, private userLocalService:UserLocalService){
     this.loginForm = this.fb.group({
@@ -36,12 +42,25 @@ export class LoginComponent {
     this.authService.login(data).subscribe({
       next:(response:AuthLoginResponse)=>{
         this.isLoading = false
+        this.showToast = true
+        this.toastMessage = "Connexion Success"
+        this.toastType ='success'
         this.userLocalService.storeUserLocal(response)
+        setTimeout(()=>{
+          this.showToast = false
+          this.router.navigate(['/blog-aYdXmXiBn/dashboard'])
+      }, 2000)
         console.log("Login Response: ", response)
       },
 
       error:(error)=>{
         this.isLoading = false
+        this.showToast = true
+        this.toastType ='error'
+        this.toastMessage = "Login error"
+        setTimeout(()=>{
+          this.showToast = false
+      }, 2000)
         console.log("Login Error", error)
       }
     })
