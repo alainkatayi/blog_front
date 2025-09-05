@@ -66,6 +66,11 @@ export class ProfileService {
     return this.http.put(this.url + 'profile/'+ id +'/experiences/update/', data, { headers })
   }
 
+  deleteExperience(id:number){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.delete(this.url + 'profile/'+id +'/experiences/delete/',{headers})
+  }
+
   getExperience(id:number){
     return this.http.get(this.url + 'profile/'+ id +'/experience/')
   }
