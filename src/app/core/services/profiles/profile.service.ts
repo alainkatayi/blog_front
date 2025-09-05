@@ -47,6 +47,12 @@ export class ProfileService {
     return this.http.put(this.url + 'profile/'+ id +'/certifications/update/', data, { headers })
 
   }
+
+  deleteCertification(id:number){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.delete(this.url + 'profile/'+id +'/certifications/delete/',{headers})
+  }
+
   getCertification(id:number){
     return this.http.get(this.url + 'profile/'+ id +'/certification/')
   }
