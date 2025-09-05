@@ -35,12 +35,12 @@ export class ProjectCreateComponent {
       description: ['', Validators.required],
       created_at: ['', Validators.required],
       status: [Boolean],
-      skills: this.fb.array([])
+      technology: this.fb.array([])
     })
   }
 
   get skills(): FormArray {
-    return this.createProjectForm.get('skills') as FormArray
+    return this.createProjectForm.get('technology') as FormArray
   }
 
   addSkill(skillName: string) {
@@ -78,6 +78,7 @@ export class ProjectCreateComponent {
 
     const formValuer = this.createProjectForm.value
     const formData = new FormData
+    formData.append('technology', JSON.stringify(this.createProjectForm.value.technology));
 
     formData.append('category_id', formValuer.category_id)
     formData.append('name', formValuer.name)
