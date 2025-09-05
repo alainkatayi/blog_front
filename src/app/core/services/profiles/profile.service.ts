@@ -24,6 +24,11 @@ export class ProfileService {
     return this.http.put(this.url + 'profile/'+ id +'/skills/update/', data, { headers })
   }
 
+  deleteSkill(id:number){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.delete(this.url + 'profile/'+id +'/skills/delete/',{headers})
+  }
+
   getSkill(id:number){
     return this.http.get(this.url + 'profile/'+ id +'/skill/')
   }
