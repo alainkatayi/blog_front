@@ -11,22 +11,50 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skills-list.component.css'
 })
 export class SkillsListComponent {
-  skills!:Skills[]
-  constructor(private profileService:ProfileService){}
+  skills!: Skills[]
+  skillId: number = -1;
+  DeleteModalOpen = false;
+  constructor(private profileService: ProfileService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getSkills()
   }
 
-  getSkills(){
+  getSkills() {
     this.profileService.getSkills().subscribe({
-      next:(response)=>{
+      next: (response) => {
         this.skills = response
-        console.log("skills",response)
+        console.log("skills", response)
       },
-      error:(error)=>{
+      error: (error) => {
         console.log("erreur", error)
       }
     })
+  }
+
+  deleteSkill() {
+    this.profileService.deleteSkill(this.skillId).subscribe({
+      next: (response) => {
+        window.location.reload();
+        console.log(response)
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    })
+  }
+
+  openDeleteModal(id: number) {
+    this.DeleteModalOpen = true;
+    this.skillId = id;
+  }
+
+  confirmDelete() {
+    this.deleteSkill();
+    this.closeDeleteModal();
+  }
+
+  closeDeleteModal() {
+    this.DeleteModalOpen = false;
   }
 }

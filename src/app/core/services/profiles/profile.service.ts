@@ -24,6 +24,11 @@ export class ProfileService {
     return this.http.put(this.url + 'profile/'+ id +'/skills/update/', data, { headers })
   }
 
+  deleteSkill(id:number){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.delete(this.url + 'profile/'+id +'/skills/delete/',{headers})
+  }
+
   getSkill(id:number){
     return this.http.get(this.url + 'profile/'+ id +'/skill/')
   }
@@ -42,6 +47,12 @@ export class ProfileService {
     return this.http.put(this.url + 'profile/'+ id +'/certifications/update/', data, { headers })
 
   }
+
+  deleteCertification(id:number){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.delete(this.url + 'profile/'+id +'/certifications/delete/',{headers})
+  }
+
   getCertification(id:number){
     return this.http.get(this.url + 'profile/'+ id +'/certification/')
   }
@@ -59,6 +70,11 @@ export class ProfileService {
   editExperience(id:number,data:FormData){
     const headers = this.userLocaService.getAuthHeaders()
     return this.http.put(this.url + 'profile/'+ id +'/experiences/update/', data, { headers })
+  }
+
+  deleteExperience(id:number){
+    const headers = this.userLocaService.getAuthHeaders()
+    return this.http.delete(this.url + 'profile/'+id +'/experiences/delete/',{headers})
   }
 
   getExperience(id:number){

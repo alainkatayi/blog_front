@@ -13,6 +13,8 @@ import { RouterLink } from '@angular/router';
 })
 export class ProjectListComponent {
   projects!: Project[]
+  projectId:number =-1
+  DeleteModalOpen=false
   constructor(private projectService: ProjectService) { }
   ngOnInit() {
     this.getProject()
@@ -27,5 +29,31 @@ export class ProjectListComponent {
         console.log("error", error)
       }
     })
+  }
+
+      deleteSkill() {
+    this.projectService.deleteProject(this.projectId).subscribe({
+      next: (response) => {
+        window.location.reload();
+        console.log(response)
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    })
+  }
+
+  openDeleteModal(id: number) {
+    this.DeleteModalOpen = true;
+    this.projectId = id;
+  }
+
+  confirmDelete() {
+    this.deleteSkill();
+    this.closeDeleteModal();
+  }
+
+  closeDeleteModal() {
+    this.DeleteModalOpen = false;
   }
 }

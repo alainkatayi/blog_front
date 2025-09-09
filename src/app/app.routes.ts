@@ -155,5 +155,12 @@ export const routes: Routes = [
         loadComponent: () =>
             import('../app/pages/admin/project-create/project-create.component').then((m) => m.ProjectCreateComponent ),
     }
+        ,
+    {
+        path:'blog-aYdXmXiBn/edit-project/:id',
+        title:'admin',
+        loadComponent: () =>
+            import('../app/pages/admin/project-edit/project-edit.component').then((m) => m.ProjectEditComponent ),
+    }
 
 ];
