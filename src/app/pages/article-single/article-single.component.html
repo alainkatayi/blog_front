@@ -12,8 +12,7 @@
             <!-- Contenu de l'article -->
             <div class="p-8">
                 <!-- Catégorie -->
-                <div class="text-center mb-6">
-                    <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold"> {{ article.category.name }} </span>
+                <div class="flex justify-between  items-center mb-4 ">
                 </div>
 
                 <!-- Titre -->
@@ -29,16 +28,12 @@
                         <i class="far fa-calendar mr-2"></i>
                         <span> {{ article.created_at }} </span>
                     </div>
-                    <div class="flex items-center">
-                        <i class="far fa-clock mr-2"></i>
-                        <span>5 min de lecture</span>
-                    </div>
                 </div>
 
                 <!-- Contenu -->
                 <div class="max-w-none wrap-break-word  text-gray-700 mb-8">
                     <div>
-                    {{ article.content }}
+                        {{ article.content }}
                     </div>
                 </div>
             </div>

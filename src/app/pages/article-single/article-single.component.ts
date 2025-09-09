@@ -4,10 +4,11 @@ import { ArticleService } from '../../core/services/articles/article.service';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-article-single',
-  imports: [HeaderComponent, FooterComponent],
+  imports: [HeaderComponent, FooterComponent,CommonModule],
   templateUrl: './article-single.component.html',
   styleUrl: './article-single.component.css'
 })
