@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { CommonModule } from '@angular/common';
+import { environnement } from '../../../environnemnts/environnement';
 
 @Component({
   selector: 'app-article-single',
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
 export class ArticleSingleComponent {
   article!:Article
   articleId!:number
+  url = environnement.Url
 
   constructor(private articleService:ArticleService,private route:ActivatedRoute){}
 
