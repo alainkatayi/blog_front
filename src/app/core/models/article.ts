@@ -4,6 +4,7 @@ import { User } from "./user";
 export interface Article{
     id:number,
     title:string,
+    image:string,
     category:Category
     introduction:string,
     content:string,
