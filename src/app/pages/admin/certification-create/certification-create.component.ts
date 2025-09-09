@@ -51,7 +51,7 @@ export class CertificationCreateComponent {
     const formData = new FormData
 
     formData.append('name', formValuer.name)
-    formData.append('organisme', formValuer.name)
+    formData.append('organisme', formValuer.organisme)
     formData.append('obtaining_date', formValuer.obtaining_date)
   
 
