@@ -68,14 +68,6 @@
           <!-- Développement Web -->
           <div>
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-4 h-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                  stroke-width="1.5" stroke="currentColor" class="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                </svg></div>
-              <h3 class="font-semibold text-lg flex items-center gap-2">
-                Développement Web
-              </h3>
             </div>
 
 
@@ -92,16 +84,6 @@
 
           <!-- Cybersécurité -->
           <div>
-            <div class="flex items-center mb-3  gap-3">
-              <div class="w-4 h-4">
-                <span class="text-black"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-                  </svg></span>
-              </div>
-              <h3 class="font-semibold text-lg flex items-center gap-2">Cybersécurité</h3>
-            </div>
             <div class="flex flex-wrap gap-2">
               <span
                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">OWASP</span>
@@ -161,16 +143,24 @@
       </div>
       <div class="p-6 pt-4">
         <div class="space-y-6">
+          @for (experience of experiences; track experience.id) {
+
           <div class="border-l-2 border-blue-200 pl-4">
 
-            @for (experience of experiences; track experience.id) {
 
             <h3 class="font-semibold text-lg"> {{ experience.job_title }} </h3>
             <p class="text-blue-600 font-medium"> {{ experience.entreprise_name }} </p>
-            <p class="text-sm text-gray-500 mb-2"> {{ experience.start_date }} à {{ experience.end_date }} </p>
+            <div class="flex items-center gap-1">
+              <span>
+                {{ experience.start_date }} - <span *ngIf="experience.end_date === null"> Présent </span>
+                <span *ngIf="experience.end_date != null"> {{ experience.end_date }} </span>
+
+              </span>
+            </div>
             <p class="text-gray-700"> {{experience.description }} </p>
-            }
+
           </div>
+          }
         </div>
       </div>
     </div>

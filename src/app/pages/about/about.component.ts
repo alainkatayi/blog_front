@@ -3,10 +3,11 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ProfileService } from '../../core/services/profiles/profile.service';
 import { Certifications, Experiences, Skills } from '../../core/models/profile';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about',
-  imports: [HeaderComponent, FooterComponent],
+  imports: [HeaderComponent, FooterComponent,CommonModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
