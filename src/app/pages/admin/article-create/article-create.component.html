@@ -42,14 +42,25 @@
                 </select>
             </div>
 
-            <!-- Contenu avec barre d'outils -->
+            <!-- Contenu avec barre d'outils 
             <div class="mb-6">
 
                 <label for="content" class="block text-gray-700 font-medium mb-2">Content</label>
-                <!-- Éditeur de contenu -->
+               
                 <textarea formControlName="content" id="content"
                     class="text-gray-500 w-full min-h-[200px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition content-editable"
                     contenteditable="true" placeholder="Write your article content here..."></textarea>
+            </div> -->
+            <ckeditor class="m-3" *ngIf="Editor" [editor]="Editor" [config]="editorConfig" formControlName="content"></ckeditor>
+
+            <div>
+                <label for="photo" class="block text-gray-700 font-medium mb-2">Photo</label>
+                <input formControlName="image" (change)="onFileSelected($event)" #fileInput type="file" id="photo"
+                    name="photo" class="w-full text-gray-800 file:mr-4 file:py-2 file:px-4
+                      file:rounded-full file:border-0
+                      file:text-sm file:font-semibold
+                      file:bg-red-800 file:text-white
+                      hover:file:bg-red-700" />
             </div>
 
             <!-- Boutons d'action -->
