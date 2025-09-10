@@ -2,6 +2,7 @@ import { Component, Input, input } from '@angular/core';
 import { Article} from '../../core/models/article';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { environnement } from '../../../environnemnts/environnement';
 
 
 @Component({
@@ -12,4 +13,5 @@ import { RouterLink } from '@angular/router';
 })
 export class ArticleCardComponent {
   @Input() article!: Article
+  url=environnement.Url
 }
