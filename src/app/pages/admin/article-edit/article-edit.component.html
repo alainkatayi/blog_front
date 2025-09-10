@@ -43,14 +43,8 @@
             </div>
 
             <!-- Contenu avec barre d'outils -->
-            <div class="mb-6">
-
-                <label for="content" class="block text-gray-700 font-medium mb-2">Content</label>
-                <!-- Éditeur de contenu -->
-                <textarea formControlName="content" id="content"
-                    class="w-full min-h-[200px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition content-editable"
-                    contenteditable="true" placeholder="Rédigez le contenu de votre article ici..."></textarea>
-            </div>
+            <ckeditor class="m-3" *ngIf="Editor" [editor]="Editor" [config]="editorConfig" formControlName="content"></ckeditor>
+   
 
             <!-- Boutons d'action -->
             <div class="flex justify-end gap-4 mt-8">
