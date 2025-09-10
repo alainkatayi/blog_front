@@ -6,10 +6,13 @@ import { ArticleCardComponent } from "../../components/article-card/article-card
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { start } from 'repl';
+import { debounceTime, distinctUntilChanged, startWith, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-article-list',
-  imports: [ArticleCardComponent, HeaderComponent, FooterComponent, CommonModule],
+  imports: [ArticleCardComponent, HeaderComponent, FooterComponent, CommonModule,ReactiveFormsModule],
   templateUrl: './article-list.component.html',
   styleUrl: './article-list.component.css'
 })
@@ -22,15 +25,24 @@ export class ArticleListComponent {
   prevPageUrl: string | null = null;
   totalCount = 0;
   isLoading = true;
+  searchControl = new FormControl('')
 
   constructor(private articleService: ArticleService) { }
-  ngOnInit() {
+  ngOnInit():void{
+    this.searchControl.valueChanges.pipe(
+      debounceTime(400),//evite les apppels API à chaque fois
+      distinctUntilChanged(), //evite les doublons
+    ).subscribe(
+      search=>{
+        this.getArticles(1,search || '')
+      }
+    )
     this.getArticles()
   }
 
-  getArticles(page: number = 1): void {
+  getArticles(page: number = 1,search:string=''): void {
     this.currentPage = page
-    this.articleService.getArticles(page, this.pageSize).subscribe({
+    this.articleService.getArticles(page, this.pageSize,{search}).subscribe({
       next: (response) => {
         //debug
         console.log("Article récupéré", response.results)
@@ -52,7 +64,7 @@ export class ArticleListComponent {
   }
 
   goToPage(page: number) {
-    this.getArticles(page);
+    this.getArticles(page,this.searchControl.value || '');
   }
 
 }

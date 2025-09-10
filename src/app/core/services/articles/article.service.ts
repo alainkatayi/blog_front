@@ -16,12 +16,15 @@ export class ArticleService {
   constructor(private http:HttpClient, private userLocaService:UserLocalService) { }
 
   //function pour la récupération des tous les artilces depuis l'api
-  getArticles(page:number= 1, page_size=6):Observable<PaginatedResponse>{
+  getArticles(page:number= 1, page_size=6,filter:any={}):Observable<PaginatedResponse>{
 
     let params = new HttpParams()
       .set('page',page.toString())
       .set('page_size', page_size.toString())
-    return this.http.get<PaginatedResponse>(`${this.url}article/?page=${page}`, {params})
+    if(filter.search){
+      params = params.set('search',filter.search)
+    }
+    return this.http.get<PaginatedResponse>(`${this.url}article/`, {params})
   }
 
   getArticle(id:number):Observable<Article>{
