@@ -1,99 +1,99 @@
 <app-header></app-header>
-<div class="min-h-screen">
-  <div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 via-white to-blue-50">
+<div class="min-h-screen ">
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 via-white to-blue-50 dark:from-[rgb(23,25,51)] dark:via-[rgb(15,17,40)] dark:to-[rgb(10,12,30)] ">
     <!-- Hero Section -->
     <section class="text-center px-4 py-24">
-      <h1 class="text-5xl md:text-6xl font-extrabold">
-        Développement Web &amp; <span class="text-blue-600">Cybersécurité</span>
+      <h1 class="text-5xl md:text-6xl font-extrabold dark:text-[rgb(61,89,161)]">
+        Développement Web &amp; <span class="text-blue-600 dark:text-[rgb(212,220,255)]">Cybersécurité</span>
       </h1>
-      <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+      <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto dark:text-[rgb(212,220,255)]">
         Partagez ma passion pour le code et la sécurité informatique. Découvrez des articles, tutoriels et projets sur
         les dernières technologies.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
         <a [routerLink]="['/article-list']"
-          class="px-8 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition">
+          class="px-8 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition dark:bg-[rgb(61,89,161)] dark:hover:bg-[rgb(61,89,161)] dark:text-[rgb(212,220,255)]">
           Lire les articles →
         </a>
         <a [routerLink]="['/project']"
-          class="px-8 py-3 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-100 transition">
+          class="px-8 py-3 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-100 transition dark:bg-[rgb(212,220,255)]">
           Voir mes projets
         </a>
       </div>
     </section>
   </div>
   <!-- Categories Section -->
-  <section class="py-16 px-4">
+  <section class="py-16 px-4 dark:bg-[rgb(27,30,61)]">
     <div class="container  mx-auto max-w-6xl">
-      <h2 class="text-3xl font-bold text-center mb-12">Mes Spécialités</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 dark:text-[rgb(212,220,255)]">Mes Spécialités</h2>
       <div class="grid md:grid-cols-2 gap-5">
 
         <!-- Card 1 - Développement Web -->
-        <div class="border  border-blue-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow bg-white">
+        <div class="border  border-blue-200 dark:border-[rgb(61,89,161)] dark:text-white dark:bg-[rgb(27,30,61)] rounded-lg shadow-sm hover:shadow-lg transition-shadow bg-white">
           <!-- Card Header -->
           <div class="p-6 pb-0">
             <div class="flex items-center gap-3">
-              <span class="text-blue-900">
+              <span class="text-blue-900 dark:text-[rgb(61,89,161)]">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="size-6">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
                 </svg>
               </span>
-              <h3 class="text-xl font-semibold text-blue-900">Développement Web</h3>
+              <h3 class="text-xl font-semibold text-blue-900 dark:text-[rgb(61,89,161)]">Développement Web</h3>
             </div>
           </div>
 
           <!-- Card Content -->
           <div class="p-6 pt-4">
-            <p class="text-base text-gray-600 mb-4">
+            <p class="text-base text-gray-600 mb-4 dark:text-[rgb(212,220,255)]">
               Angular, Python, TypeScript et bien plus. Découvrez les meilleures pratiques et les dernières tendances du
               développement web moderne.
             </p>
             <div class="flex flex-wrap gap-2">
               <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">Angular</span>
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-[rgb(212,220,255)]">Angular</span>
               <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">Python</span>
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-[rgb(212,220,255)]">Python</span>
               <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">Laravel</span>
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-[rgb(212,220,255)]">Laravel</span>
               <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">Django
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-[rgb(212,220,255)]">Django
                 Rest Framework</span>
             </div>
           </div>
         </div>
 
         <!-- Card 2 - Cybersécurité -->
-        <div class="border border-blue-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow bg-white">
+        <div class="border border-blue-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow bg-white  dark:border-[rgb(61,89,161)] dark:text-white dark:bg-[rgb(27,30,61)] ">
           <!-- Card Header -->
           <div class="p-6 pb-0">
             <div class="flex items-center gap-3">
-              <span class="text-blue-900"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              <span class="text-blue-900 dark:text-[rgb(61,89,161)]"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                   stroke-width="1.5" stroke="currentColor" class="size-6">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
                 </svg></span>
-              <h3 class="text-xl font-semibold text-blue-900">Cybersécurité</h3>
+              <h3 class="text-xl font-semibold text-blue-900 dark:text-[rgb(61,89,161)]">Cybersécurité</h3>
             </div>
           </div>
 
           <!-- Card Content -->
           <div class="p-6 pt-4">
-            <p class="text-base text-gray-600 mb-4">
+            <p class="text-base text-gray-600 mb-4 dark:text-[rgb(212,220,255)]">
               Sécurité des applications, tests de pénétration, et protection contre les vulnérabilités. Apprenez à
               sécuriser vos projets efficacement.
             </p>
             <div class="flex flex-wrap gap-2">
               <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">OWASP</span>
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-[rgb(212,220,255)]">OWASP</span>
               <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">Pentesting</span>
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-[rgb(212,220,255)]">Pentesting</span>
               <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">Sécurité
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-[rgb(212,220,255)]">Sécurité
                 Web</span>
               <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">Cryptographie</span>
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-[rgb(212,220,255)]">Cryptographie</span>
             </div>
           </div>
         </div>
@@ -102,11 +102,11 @@
     </div>
   </section>
 
-  <section class="bg-gray-100 p-5">
+  <section class="bg-gray-100 p-5 dark:bg-[rgb(23,25,51)]">
     <div class="flex justify-between p-5  mx-auto max-w-6xl">
-      <h2 class="text-3xl  font-bold">Articles Récents</h2>
+      <h2 class="text-3xl  font-bold dark:text-[rgb(212,220,255)]">Articles Récents</h2>
       <a [routerLink]="['/article-list']"
-        class="border-1 border-gray-400 bg-white p-2 rounded-lg hover:bg-gray-100 transition">Voir tous les
+        class="border-1 border-gray-400 bg-white p-2 rounded-lg hover:bg-gray-100 transition dark:bg-[rgb(61,89,161)] dark:text-[rgb(212,220,255)]">Voir tous les
         articles</a>
     </div>
     <div class="container  mx-auto max-w-6xl">
@@ -121,14 +121,14 @@
 </div>
 
 <!-- CTA Section -->
-<section class="mt-6 py-16 px-4 bg-blue-600 text-white">
+<section class="mb-0.5 py-16 px-4 bg-blue-600 text-white dark:bg-[rgb(27,30,61)]">
   <div class="container mx-auto max-w-4xl text-center">
-    <h2 class="text-3xl font-bold mb-4">Restons en Contact</h2>
-    <p class="text-xl mb-8 text-blue-100">Vous avez des questions ou souhaitez collaborer sur un projet ?</p>
+    <h2 class="text-3xl font-bold mb-4 dark:text-[rgb(212,220,255)]">Restons en Contact</h2>
+    <p class="text-xl mb-8 text-blue-100 dark:text-[rgb(212,220,255)]">Vous avez des questions ou souhaitez collaborer sur un projet ?</p>
 
     <!-- Button -->
     <a href="/contact"
-      class="inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-md bg-white text-blue-600 hover:bg-gray-100 transition-colors">
+      class="inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-md bg-white text-blue-600 hover:bg-gray-100 dark:bg-[rgb(61,89,161)] dark:hover:bg-[rgb(61,89,161)] dark:text-[rgb(212,220,255)] transition-colors">
       Me Contacter
     </a>
   </div>
