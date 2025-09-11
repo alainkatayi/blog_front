@@ -10,4 +10,5 @@ export interface Project{
     status:Boolean
     category:Category
     technology:Skills[]
+    image:string
 }
