@@ -34,10 +34,22 @@ export class ProjectCreateComponent {
       name: ['', Validators.required],
       description: ['', Validators.required],
       created_at: ['', Validators.required],
+      image:['',Validators.required],
       status: [Boolean],
       technology: this.fb.array([])
     })
   }
+
+    selectedFile!: File;
+    onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+      // Mise à jour du champ "photo" dans le formulaire
+      this.createProjectForm.patchValue({ image: file });
+      this.createProjectForm.get('image')?.updateValueAndValidity();
+    }
+  } 
 
   get skills(): FormArray {
     return this.createProjectForm.get('technology') as FormArray
@@ -85,6 +97,9 @@ export class ProjectCreateComponent {
     formData.append('description', formValuer.description)
     formData.append('created_at', formValuer.created_at)
     formData.append('status', formValuer.status)
+    if (this.selectedFile) {
+      formData.append('image', this.selectedFile);
+    }
 
     this.projectService.createProject(formData).subscribe({
       next: (response) => {
