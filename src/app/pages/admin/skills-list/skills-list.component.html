@@ -1,20 +1,20 @@
 <!-- Container principal -->
-<div class="min-h-screen bg-gray-50 py-8 px-4">
+<div class="min-h-screen bg-gray-50 py-8 px-4 dark:bg-[rgb(23,25,51)]">
     <div class="container mx-auto max-w-6xl">
 
         <!-- Header de la page avec titre et boutons -->
         <div class="flex items-center justify-between mb-8">
             <div class="flex items-center gap-4">
                 <a [routerLink]="['/blog-aYdXmXiBn/dashboard']"
-                    class="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50">
+                    class="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 dark:text-[rgb(212,220,255)] dark:bg-[rgb(61,89,161)]  dark:border-[rgb(61,89,161)]">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                     Back
                 </a>
                 <div>
-                    <h1 class="text-3xl font-bold text-gray-900">Skills Management</h1>
-                    <p class="text-gray-600">
+                    <h1 class="text-3xl font-bold text-gray-900 dark:text-[rgb(212,220,255)] ">Skills Management</h1>
+                    <p class="text-gray-600 dark:text-[rgb(212,220,255)]">
                         Create and manage skills displayed on your blog</p>
                 </div>
             </div>
@@ -32,14 +32,14 @@
 
             <!-- projects 1 - Info -->
             @for (skill of skills; track skill.id) {
-            <div class="bg-white rounded-lg shadow p-6">
+            <div class="bg-white rounded-lg shadow p-6 dark:bg-[rgb(61,89,161)]">
                 <div class="flex items-start justify-between">
                     <div class="flex-1">
                         <!-- Badges de type et priorité -->
                         <div class="flex items-center gap-3 mb-3">
                             <span class="px-3 py-1 rounded-full text-[10px] font-medium bg-blue-100 text-white"
                                 [ngClass]="{
-      'bg-purple-700': skill.category.name === 'developement web',
+      'bg-purple-700 dark:text-[rgb(212,220,255)] dark:bg-[rgb(23,25,51)] ': skill.category.name === 'Web developement',
       'bg-green-600': skill.category.name ==='Cybersécurité'
     }">
                                 {{ skill.category.name }}
@@ -47,7 +47,7 @@
                         </div>
 
                         <!-- Titre et contenu -->
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 dark:text-[rgb(212,220,255)]">
                             {{ skill.name }}
                         </h3>
                     </div>
@@ -56,7 +56,7 @@
                     <div class="flex items-center gap-2">
 
                         <a [routerLink]="['/blog-aYdXmXiBn/edit-skill/',skill.id]"
-                            class="p-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-50">
+                            class="p-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-50 dark:text-[rgb(212,220,255)]">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -78,7 +78,7 @@
 
   <!-- Modal de confirmation -->
   <div *ngIf="DeleteModalOpen"
-    class="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
+    class="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 ">
     <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-6">
       <h2 class="text-xl font-semibold text-gray-800 mb-4">Confirm Deletion</h2>
       <p class="text-gray-600 mb-6">

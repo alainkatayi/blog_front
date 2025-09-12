@@ -1,20 +1,20 @@
 <!-- Container principal -->
-<div class="min-h-screen bg-gray-50 py-8 px-4">
+<div class="min-h-screen bg-gray-50 py-8 px-4 dark:bg-[rgb(23,25,51)]">
     <div class="container mx-auto max-w-6xl">
 
         <!-- Header de la page avec titre et boutons -->
         <div class="flex items-center justify-between mb-8">
             <div class="flex items-center gap-4">
                 <a [routerLink]="['/blog-aYdXmXiBn/dashboard']"
-                    class="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50">
+                    class="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 dark:text-[rgb(212,220,255)] dark:bg-[rgb(61,89,161)] dark:border-[rgb(61,89,161)]">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                     Back
                 </a>
                 <div>
-                    <h1 class="text-3xl font-bold text-gray-900">Article Management</h1>
-                    <p class="text-gray-600">Create and manage posts displayed on your blog</p>
+                    <h1 class="text-3xl font-bold text-gray-900 dark:text-[rgb(212,220,255)]">Article Management</h1>
+                    <p class="text-gray-600 dark:text-[rgb(212,220,255)]">Create and manage posts displayed on your blog</p>
                 </div>
             </div>
             <a [routerLink]="['/blog-aYdXmXiBn/create']" class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
@@ -30,7 +30,7 @@
 
             <!-- Annonce 1 - Info -->
             @for (article of articles; track article.id) {
-            <div class="bg-white rounded-lg shadow p-6">
+            <div class="bg-white rounded-lg shadow p-6 dark:text-[rgb(212,220,255)] dark:bg-[rgb(61,89,161)]">
                 <div class="flex items-start justify-between">
                     <div class="flex-1">
                         <!-- Badges de type et priorité -->
@@ -44,15 +44,15 @@
                         </div>
 
                         <!-- Titre et contenu -->
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 dark:text-[rgb(212,220,255)]">
                             {{ article.title }}
                         </h3>
-                        <p class="text-gray-600 mb-3">
+                        <p class="text-gray-600 mb-3 dark:text-[rgb(212,220,255)]">
                             {{ article.introduction }}
                         </p>
 
                         <!-- Dates -->
-                        <div class="flex items-center gap-4 text-sm text-gray-500">
+                        <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-[rgb(212,220,255)]">
                             <span>Créée le {{ article.created_at}} </span>
 
                         </div>
