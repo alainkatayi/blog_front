@@ -1,20 +1,20 @@
 <!-- Container principal -->
-<div class="min-h-screen bg-gray-50 py-8 px-4">
+<div class="min-h-screen bg-gray-50 py-8 px-4 dark:bg-[rgb(23,25,51)]">
     <div class="container mx-auto max-w-6xl">
 
         <!-- Header de la page avec titre et boutons -->
         <div class="flex items-center justify-between mb-8">
             <div class="flex items-center gap-4">
                 <button [routerLink]="['/blog-aYdXmXiBn/dashboard']"
-                    class="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50">
+                    class="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 dark:text-[rgb(212,220,255)]   dark:border-[rgb(61,89,161)]">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                     Back
                 </button>
                 <div>
-                    <h1 class="text-3xl font-bold text-gray-900">My Certifications</h1>
-                    <p class="text-gray-600">Manage your professional certifications and qualifications</p>
+                    <h1 class="text-3xl font-bold text-gray-900 dark:text-[rgb(212,220,255)]">My Certifications</h1>
+                    <p class="text-gray-600 dark:text-[rgb(212,220,255)]">Manage your professional certifications and qualifications</p>
                 </div>
             </div>
             <button [routerLink]="['/blog-aYdXmXiBn/certification-create']" class="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
@@ -30,7 +30,7 @@
 
             @for (certification of certifications; track certification.id) {
             <!-- Certification 1 - AWS Solutions Architect -->
-            <div class="bg-white rounded-lg shadow p-6">
+            <div class="bg-white rounded-lg shadow p-6 dark:text-[rgb(212,220,255)] dark:bg-[rgb(61,89,161)]">
                 <div class="flex items-start justify-between">
                     <div class="flex items-start gap-4">
                         <!-- Logo/Badge de la certification -->
@@ -44,16 +44,16 @@
                         <div class="flex-1">
                             <!-- Titre et organisme -->
                             <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-lg font-semibold text-gray-900">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-[rgb(212,220,255)]">
                                     {{ certification.name }}
                                 </h3>
 
                             </div>
 
-                            <p class="text-gray-600 mb-3"> {{ certification.organisme }} </p>
+                            <p class="text-gray-600 mb-3 dark:text-[rgb(212,220,255)]"> {{ certification.organisme }} </p>
 
                             <!-- Description -->
-                            <p class="text-gray-700 mb-4">
+                            <p class="text-gray-700 mb-4 dark:text-[rgb(212,220,255)]">
                                 Certification validant les compétences en conception d'architectures distribuées sur
                                 AWS,
                                 incluant la sécurité, la résilience et l'optimisation des coûts.
@@ -62,8 +62,8 @@
                             <!-- Informations détaillées -->
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                                 <div>
-                                    <span class="font-medium text-gray-900">Obtenue le :</span>
-                                    <span class="text-gray-600 ml-1"> {{ certification.obtaining_date }} </span>
+                                    <span class="font-medium text-gray-900 dark:text-[rgb(212,220,255)]">Obtenue le :</span>
+                                    <span class="text-gray-600 ml-1 dark:text-[rgb(212,220,255)]"> {{ certification.obtaining_date }} </span>
                                 </div>
                             </div>
                         </div>
