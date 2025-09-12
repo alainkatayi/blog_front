@@ -1,5 +1,5 @@
 <!-- Project Card -->
-<div class="bg-white border border-gray-300 rounded-lg shadow hover:shadow-lg transition-shadow">
+<div class="bg-white border border-gray-300 rounded-lg shadow hover:shadow-lg transition-shadow dark:border-[rgb(61,89,161)] overflow-hidden  dark:bg-[rgb(23,25,51)]">
     <!-- Image -->
     <div class="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
         <img [src]="project.image"
@@ -10,16 +10,16 @@
     <div class="p-4">
         <!-- Badges -->
         <div class="flex items-center justify-between mb-2">
-            <span class=" text-sm p-1 rounded-full bg-green-600 text-white"> {{ project.category.name }} </span>
-            <span class="  text-sm p-1  rounded-full bg-green-600 text-white" *ngIf="project.status===true"> Terminé </span>
+            <span class=" text-sm p-1 rounded-full bg-green-600 text-white dark:bg-[rgb(61,89,161)] dark:text-[rgb(212,220,255)]"> {{ project.category.name }} </span>
+            <span class="  text-sm p-1  rounded-full bg-green-600 text-white " *ngIf="project.status===true"> Terminé </span>
             <span class="  text-sm p-1  rounded-full bg-yellow-500 text-white" *ngIf="project.status===false"> en cours </span>
         </div>
 
         <!-- Title -->
-        <h2 class="text-lg font-bold mb-2"> {{ project.name }} </h2>
+        <h2 class="text-lg font-bold mb-2 dark:text-[rgb(212,220,255)]"> {{ project.name }} </h2>
 
         <!-- Description -->
-        <p class="text-sm text-gray-600 mb-4">
+        <p class="text-sm text-gray-600 mb-4 dark:text-[rgb(212,220,255)]">
             {{ project.description }}
         </p>
 
@@ -27,12 +27,12 @@
         <div class="flex flex-wrap gap-1 mb-4">
             @for (skill of project.technology; track skill.id) {
 
-            <span class="px-2 py-1 text-xs border border-gray-300 rounded-full font-bold"> {{ skill }} </span>
+            <span class="px-2 py-1 text-xs border border-gray-300 rounded-full font-bold dark:bg-[rgb(61,89,161)] dark:border-[rgb(61,89,161)] dark:text-[rgb(212,220,255)]"> {{ skill }} </span>
             }
 
         </div>
         <!-- Date -->
-        <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500 mb-4 dark:text-[rgb(212,220,255)]">
             <svg class="w-4 h-4" fill="#9a9898" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -48,8 +48,8 @@
         <!-- Buttons -->
         <div class="flex gap-2">
             <a href="#" target="_blank"
-                class="flex items-center gap-1 px-3 py-1 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-100">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                class="flex items-center gap-1 px-3 py-1 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-100 dark:text-[rgb(212,220,255)] dark:border-[rgb(61,89,161)] dark:hover:bg-[rgb(61,89,161)]">
+                <svg class="w-4 h-4 " viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
@@ -64,7 +64,7 @@
                 Code
             </a>
             <a href="#" target="_blank"
-                class="flex items-center gap-1 px-3 py-1 rounded text-sm text-white bg-blue-600 hover:bg-blue-700">
+                class="flex items-center gap-1 px-3 py-1 rounded text-sm text-white bg-blue-600 hover:bg-blue-700 dark:text-[rgb(212,220,255)] dark:bg-[rgb(61,89,161)] dark:hover:bg-[rgb(61,89,161)]">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7L10 14m4-11H3v18h18V10"></path>
                 </svg>

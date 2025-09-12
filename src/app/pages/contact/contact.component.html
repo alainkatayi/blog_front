@@ -1,12 +1,12 @@
 <app-header></app-header>
 
 
-<div class="min-h-screen bg-gray-50 py-12 px-4">
+<div class="min-h-screen bg-gray-50 py-12 px-4 dark:bg-[rgb(23,25,51)]">
     <div class="container mx-auto max-w-6xl">
         <!-- Header -->
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold mb-4">Me Contacter</h1>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h1 class="text-4xl font-bold mb-4 dark:text-[rgb(212,220,255)]">Me Contacter</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto dark:text-[rgb(212,220,255)]">
                 Une question, un projet ou juste envie de discuter ? N'hésitez pas à me contacter !
             </p>
         </div>
@@ -14,13 +14,15 @@
         <div class="grid lg:grid-cols-3 gap-8">
             <!-- Contact Form -->
             <div class="lg:col-span-2">
-                <div class="bg-white rounded-lg border border-gray-300 ">
+                <div class="bg-white rounded-lg border border-gray-300 dark:bg-[rgb(27,30,61)] dark:text-[rgb(212,220,255)] dark:border-[rgb(27,30,61)] ">
                     <div class="p-6 ">
-                        <h2 class="text-xl font-semibold flex items-center gap-2">
-                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.3009 13.6949L20.102 3.89742M10.5795 14.1355L12.8019 18.5804C13.339 19.6545 13.6075 20.1916 13.9458 20.3356C14.2394 20.4606 14.575 20.4379 14.8492 20.2747C15.1651 20.0866 15.3591 19.5183 15.7472 18.3818L19.9463 6.08434C20.2845 5.09409 20.4535 4.59896 20.3378 4.27142C20.2371 3.98648 20.013 3.76234 19.7281 3.66167C19.4005 3.54595 18.9054 3.71502 17.9151 4.05315L5.61763 8.2523C4.48114 8.64037 3.91289 8.83441 3.72478 9.15032C3.56153 9.42447 3.53891 9.76007 3.66389 10.0536C3.80791 10.3919 4.34498 10.6605 5.41912 11.1975L9.86397 13.42C10.041 13.5085 10.1295 13.5527 10.2061 13.6118C10.2742 13.6643 10.3352 13.7253 10.3876 13.7933C10.4468 13.87 10.491 13.9585 10.5795 14.1355Z" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        <h2 class="text-xl font-semibold flex items-center gap-2 ">
+                            <div class="w-7 h-7"  >
+                                📩
+                            </div>
                             Envoyez-moi un message
                         </h2>
-                        <p class="text-gray-500 mt-1">
+                        <p class="text-gray-500 mt-1 dark:text-[rgb(212,220,255)]">
                             Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.
                         </p>
                     </div>
@@ -33,7 +35,7 @@
                                         id="name"
                                         type="text"
                                         placeholder="Votre nom"
-                                        class="w-full px-3 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        class="w-full px-3 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:border-[rgb(61,89,161)]"
                                         required
                                     />
                                 </div>
@@ -43,7 +45,7 @@
                                         id="email"
                                         type="email"
                                         placeholder="votre@email.com"
-                                        class="w-full px-3 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        class="w-full px-3 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:border-[rgb(61,89,161)]"
                                         required
                                     />
                                 </div>
@@ -57,7 +59,7 @@
                                     id="subject"
                                     type="text"
                                     placeholder="Sujet de votre message"
-                                    class="w-full px-3 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    class="w-full px-3 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:border-[rgb(61,89,161)]"
                                     required
                                 />
                             </div>
@@ -67,12 +69,12 @@
                                 <textarea
                                     id="message"
                                     placeholder="Décrivez votre demande en détail..."
-                                    class="w-full px-3 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
+                                    class="w-full px-3 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px] dark:focus:border-[rgb(61,89,161)]"
                                     required
                                 ></textarea>
                             </div>
 
-                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md flex items-center justify-center">
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md flex items-center justify-center dark:bg-[rgb(61,89,161)]">
                                 <i data-lucide="send" class="w-4 h-4 mr-2"></i>
                                 Envoyer le message
                             </button>
@@ -84,76 +86,76 @@
             <!-- Contact Info & Social Links -->
             <div class="space-y-6">
                 <!-- Contact Info -->
-                <div class="bg-white rounded-lg border  border-gray-300">
+                <div class="bg-white rounded-lg border  border-gray-300 dark:bg-[rgb(27,30,61)] dark:text-[rgb(212,220,255)] dark:border-[rgb(27,30,61)]">
                     <div class="p-6">
                         <h2 class="text-2xl font-bold">Informations de Contact</h2>
-                        <p class="text-gray-500">Une question, un projet ou juste envie de discuter ? N'hésitez pas à me contacter !</p>
+                        <p class="text-gray-500 dark:text-[rgb(212,220,255)]">Une question, un projet ou juste envie de discuter ? N'hésitez pas à me contacter !</p>
                     </div>
                     <div class="p-6 space-y-4">
                         <div class="flex items-center gap-3">
                             <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <rect x="3" y="5" width="18" height="14" rx="2" stroke="#1E88E5" stroke-width="2" stroke-linecap="round"></rect> </g></svg>
                             <div>
                                 <p class="font-medium">Email</p>
-                                <p class="text-sm text-gray-600"> {{ email}} </p>
+                                <p class="text-sm text-gray-600 dark:text-[rgb(212,220,255)]"> {{ email}} </p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3.51089 2L7.15002 2.13169C7.91653 2.15942 8.59676 2.64346 8.89053 3.3702L9.96656 6.03213C10.217 6.65159 10.1496 7.35837 9.78693 7.91634L8.40831 10.0375C9.22454 11.2096 11.4447 13.9558 13.7955 15.5633L15.5484 14.4845C15.9939 14.2103 16.5273 14.1289 17.0314 14.2581L20.5161 15.1517C21.4429 15.3894 22.0674 16.2782 21.9942 17.2552L21.7705 20.2385C21.6919 21.2854 20.8351 22.1069 19.818 21.9887C6.39245 20.4276 -1.48056 1.99997 3.51089 2Z" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                             <div>
-                                <p class="font-medium">Téléphone</p>
-                                <p class="text-sm text-gray-600">+243 85 084 22 37</p>
+                                <p class="font-medium dark:text-[rgb(212,220,255)]">Téléphone</p>
+                                <p class="text-sm text-gray-600 dark:text-[rgb(212,220,255)]">+243 85 084 22 37</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                             <div>
-                                <p class="font-medium">Localisation</p>
-                                <p class="text-sm text-gray-600">Kinshasa, République démocratique du Congo</p>
+                                <p class="font-medium dark:text-[rgb(212,220,255)]">Localisation</p>
+                                <p class="text-sm text-gray-600 dark:text-[rgb(212,220,255)]">Kinshasa, République démocratique du Congo</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Social Links -->
-                <div class="bg-white rounded-lg border  border-gray-300">
+                <div class="bg-white rounded-lg border  border-gray-300 dark:bg-[rgb(27,30,61)] dark:text-[rgb(212,220,255)] dark:border-[rgb(27,30,61)]">
                     <div class="p-6">
                         <h2 class="text-2xl font-bold">Réseaux Sociaux</h2>
-                        <p class="text-gray-500 mt-1">Retrouvez-moi sur les différentes plateformes</p>
+                        <p class="text-gray-500 mt-1 dark:text-[rgb(212,220,255)]">Retrouvez-moi sur les différentes plateformes</p>
                     </div>
                     <div class="p-6 space-y-4">
-                        <a href="https://github.com/alainkatayi" class="flex items-center gap-3 p-3 rounded-lg border  border-gray-300 hover:bg-gray-50 transition-colors">
+                        <a href="https://github.com/alainkatayi" class="flex items-center gap-3 p-3 rounded-lg border  border-gray-300 hover:bg-gray-50 transition-colors dark:hover:bg-[rgb(61,89,161)] dark:hover:border-[rgb(61,89,161)]">
                             <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.0744 2.9938C4.13263 1.96371 4.37869 1.51577 5.08432 1.15606C5.84357 0.768899 7.04106 0.949072 8.45014 1.66261C9.05706 1.97009 9.11886 1.97635 10.1825 1.83998C11.5963 1.65865 13.4164 1.65929 14.7213 1.84164C15.7081 1.97954 15.7729 1.97265 16.3813 1.66453C18.3814 0.651679 19.9605 0.71795 20.5323 1.8387C20.8177 2.39812 20.8707 3.84971 20.6494 5.04695C20.5267 5.71069 20.5397 5.79356 20.8353 6.22912C22.915 9.29385 21.4165 14.2616 17.8528 16.1155C17.5801 16.2574 17.3503 16.3452 17.163 16.4167C16.5879 16.6363 16.4133 16.703 16.6247 17.7138C16.7265 18.2 16.8491 19.4088 16.8973 20.4002C16.9844 22.1922 16.9831 22.2047 16.6688 22.5703C16.241 23.0676 15.6244 23.076 15.2066 22.5902C14.9341 22.2734 14.9075 22.1238 14.9075 20.9015C14.9075 19.0952 14.7095 17.8946 14.2417 16.8658C13.6854 15.6415 14.0978 15.185 15.37 14.9114C17.1383 14.531 18.5194 13.4397 19.2892 11.8146C20.0211 10.2698 20.1314 8.13501 18.8082 6.83668C18.4319 6.3895 18.4057 5.98446 18.6744 4.76309C18.7748 4.3066 18.859 3.71768 18.8615 3.45425C18.8653 3.03823 18.8274 2.97541 18.5719 2.97541C18.4102 2.97541 17.7924 3.21062 17.1992 3.49805L16.2524 3.95695C16.1663 3.99866 16.07 4.0147 15.975 4.0038C13.5675 3.72746 11.2799 3.72319 8.86062 4.00488C8.76526 4.01598 8.66853 3.99994 8.58215 3.95802L7.63585 3.49882C7.04259 3.21087 6.42482 2.97541 6.26317 2.97541C5.88941 2.97541 5.88379 3.25135 6.22447 4.89078C6.43258 5.89203 6.57262 6.11513 5.97101 6.91572C5.06925 8.11576 4.844 9.60592 5.32757 11.1716C5.93704 13.1446 7.4295 14.4775 9.52773 14.9222C10.7926 15.1903 11.1232 15.5401 10.6402 16.9905C10.26 18.1319 10.0196 18.4261 9.46707 18.4261C8.72365 18.4261 8.25796 17.7821 8.51424 17.1082C8.62712 16.8112 8.59354 16.7795 7.89711 16.5255C5.77117 15.7504 4.14514 14.0131 3.40172 11.7223C2.82711 9.95184 3.07994 7.64739 4.00175 6.25453C4.31561 5.78028 4.32047 5.74006 4.174 4.83217C4.09113 4.31822 4.04631 3.49103 4.0744 2.9938Z" fill="#1E88E5"></path> <path d="M3.33203 15.9454C3.02568 15.4859 2.40481 15.3617 1.94528 15.6681C1.48576 15.9744 1.36158 16.5953 1.66793 17.0548C1.8941 17.3941 2.16467 17.6728 2.39444 17.9025C2.4368 17.9449 2.47796 17.9858 2.51815 18.0257C2.71062 18.2169 2.88056 18.3857 3.05124 18.5861C3.42875 19.0292 3.80536 19.626 4.0194 20.6962C4.11474 21.1729 4.45739 21.4297 4.64725 21.5419C4.85315 21.6635 5.07812 21.7352 5.26325 21.7819C5.64196 21.8774 6.10169 21.927 6.53799 21.9559C7.01695 21.9877 7.53592 21.998 7.99999 22.0008C8.00033 22.5527 8.44791 23.0001 8.99998 23.0001C9.55227 23.0001 9.99998 22.5524 9.99998 22.0001V21.0001C9.99998 20.4478 9.55227 20.0001 8.99998 20.0001C8.90571 20.0001 8.80372 20.0004 8.69569 20.0008C8.10883 20.0026 7.34388 20.0049 6.67018 19.9603C6.34531 19.9388 6.07825 19.9083 5.88241 19.871C5.58083 18.6871 5.09362 17.8994 4.57373 17.2891C4.34391 17.0194 4.10593 16.7834 3.91236 16.5914C3.87612 16.5555 3.84144 16.5211 3.80865 16.4883C3.5853 16.265 3.4392 16.1062 3.33203 15.9454Z" fill="#1E88E5"></path> </g></svg>
                             <div>
                                 <p class="font-medium">GitHub</p>
-                                <p class="text-sm text-gray-600">Projets open-source</p>
+                                <p class="text-sm text-gray-600 dark:text-[rgb(212,220,255)]">Projets open-source</p>
                             </div>
                         </a>
-                        <a href="https://x.com/alainkatayi01" class="flex items-center gap-3 p-3 rounded-lg border  border-gray-300 hover:bg-gray-50 transition-colors">
+                        <a href="https://x.com/alainkatayi01" class="flex items-center gap-3 p-3 rounded-lg border  border-gray-300 hover:bg-gray-50 transition-colors dark:hover:bg-[rgb(61,89,161)] dark:hover:border-[rgb(61,89,161)]">
                             <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.8486 5.65845C13.1442 5.65845 11.7626 7.0401 11.7626 8.74446C11.7626 8.95304 11.7831 9.15581 11.822 9.35119C11.8846 9.66589 11.7924 9.99153 11.5741 10.2267C11.3558 10.4619 11.0379 10.578 10.7194 10.5389C8.51116 10.268 6.50248 9.35556 4.88498 7.9954C4.91649 8.59732 5.12515 9.23671 5.57799 9.90654L6.25677 10.9106L5.14211 11.3863L4.92704 11.4781C5.0869 11.6609 5.2791 11.8487 5.49369 12.0332C5.73717 12.2425 5.97247 12.4165 6.14726 12.5381C6.23408 12.5985 6.30452 12.645 6.35171 12.6755C6.37527 12.6907 6.39294 12.7018 6.40383 12.7086L6.41495 12.7155L6.41519 12.7157L6.41551 12.7159L6.41578 12.7161L6.41619 12.7163L6.41647 12.7165L7.96448 13.655L6.34397 14.4653C6.26374 14.5054 6.18367 14.5412 6.10393 14.573C6.42924 14.8471 6.82517 15.0995 7.2464 15.2986L8.63623 15.9556L7.47226 16.9598C6.8369 17.508 6.19778 17.9166 5.36946 18.1326C6.59681 18.7875 8.00315 19.1596 9.49941 19.1596C14.3045 19.1596 18.1746 15.325 18.1746 10.6256V10.1059L18.5998 9.80721C19.2636 9.34107 19.7329 8.71068 20.0689 7.99004H18.5398H17.9084L17.637 7.41994C17.1401 6.37633 16.0772 5.65845 14.8486 5.65845ZM3.56882 12.9581C3.38031 13.174 3.29093 13.4642 3.33193 13.7553C3.44474 14.5563 3.92441 15.2462 4.45444 15.7728C4.59838 15.9158 4.75232 16.0531 4.91396 16.184C4.88926 16.1909 4.86437 16.1975 4.83925 16.2038C4.35789 16.3243 3.70926 16.3494 2.62755 16.2434C2.20934 16.2024 1.81014 16.4273 1.62841 16.8062C1.44668 17.185 1.5212 17.6371 1.81492 17.9376C3.75693 19.9245 6.48413 21.1596 9.49941 21.1596C15.212 21.1596 19.8978 16.7239 20.1628 11.126C21.4521 10.0429 22.0976 8.57673 22.4458 7.24263C22.5241 6.94292 22.459 6.62387 22.2696 6.37873C22.0803 6.13359 21.788 5.99004 21.4783 5.99004H19.1247C18.2201 4.58853 16.6437 3.65845 14.8486 3.65845C12.1796 3.65845 9.99072 5.71435 9.7793 8.32892C7.91032 7.84456 6.2705 6.78758 5.05863 5.35408C4.83759 5.09261 4.49814 4.9624 4.15894 5.00897C3.81974 5.05554 3.52794 5.27241 3.38555 5.58378C2.78087 6.90597 2.66434 8.43104 3.34116 9.98046L3.10746 10.0802C2.64466 10.2777 2.40073 10.7884 2.5379 11.2725C2.72276 11.925 3.14129 12.5011 3.56882 12.9581Z" fill="#1E88E5"></path> </g></svg>
                             <div>
                                 <p class="font-medium">Twitter</p>
-                                <p class="text-sm text-gray-600">Actualités et conseils</p>
+                                <p class="text-sm text-gray-600 dark:text-[rgb(212,220,255)]">Actualités et conseils</p>
                             </div>
                         </a>
-                        <a href="https://www.linkedin.com/in/alain-katayi/" class="flex items-center gap-3 p-3 rounded-lg border  border-gray-300 hover:bg-gray-50 transition-colors">
+                        <a href="https://www.linkedin.com/in/alain-katayi/" class="flex items-center gap-3 p-3 rounded-lg border  border-gray-300 hover:bg-gray-50 transition-colors dark:hover:bg-[rgb(61,89,161)] dark:hover:border-[rgb(61,89,161)]">
                             <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 22V15C18 13.8954 17.1046 13 16 13C14.8954 13 14 13.8954 14 15V22H10" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10 22V15C10 11.6863 12.6863 9 16 9C19.3137 9 22 11.6863 22 15V22H18" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <rect x="3" y="9" width="4" height="13" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect> <circle cx="5" cy="4" r="2" stroke="#1E88E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle> </g></svg>
                             <div>
                                 <p class="font-medium">LinkedIn</p>
-                                <p class="text-sm text-gray-600">Profil professionnel</p>
+                                <p class="text-sm text-gray-600 dark:text-[rgb(212,220,255)]">Profil professionnel</p>
                             </div>
                         </a>
                     </div>
                 </div>
 
                 <!-- Response Time -->
-                <div class="bg-white rounded-lg border  border-gray-300">
+                <div class="bg-white rounded-lg border  border-gray-300 dark:bg-[rgb(27,30,61)] dark:text-[rgb(212,220,255)] dark:border-[rgb(27,30,61)]">
                     <div class="p-6">
                         <h2 class="text-2xl font-bold">Temps de Réponse</h2>
                     </div>
                     <div class="p-6">
-                        <p class="text-sm text-gray-600">
+                        <p class="text-sm text-gray-600 dark:text-[rgb(212,220,255)]">
                             Je m'efforce de répondre à tous les messages dans les
-                            <span class="font-medium text-blue-600"> 24-48 heures</span>. Pour les demandes urgentes,
+                            <span class="font-medium text-blue-600 dark:text-[rgb(61,89,161)]"> 24-48 heures</span>. Pour les demandes urgentes,
                             n'hésitez pas à me contacter directement par email.
                         </p>
                     </div>

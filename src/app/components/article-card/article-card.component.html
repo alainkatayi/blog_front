@@ -1,32 +1,32 @@
 <div
-  class="max-w-md w-full  rounded-lg border border-gray-200 bg-white  shadow-sm transition overflow-hidden hover:shadow-lg">
+  class="max-w-md w-full  rounded-lg border border-gray-200 dark:border-[rgb(61,89,161)] bg-white  shadow-sm transition overflow-hidden hover:shadow-lg dark:bg-[rgb(23,25,51)]">
   <div class="h-48 bg-gray-200 mb-2 flex items-center justify-center">
     <img [src]="article.image" alt="Image de l'article" class="h-full w-full object-cover" />
   </div>
   <!-- Catégorie -->
   <div class="p-6">
     <div class="flex justify-between items-center mb-4">
-      <span class="text-white text-sm font-medium px-3 py-1 rounded-full" [ngClass]="{
-      'bg-blue-600': article.category.name === 'Web developement',
-      'bg-green-600': article.category.name ==='Cybersécurité'
+      <span class="text-white dark:text-[rgb(212,220,255)] text-sm font-medium px-3 py-1 rounded-full" [ngClass]="{
+      'bg-blue-600 dark:bg-[rgb(61,89,161)]': article.category.name === 'Web developement',
+      'bg-green-600 dark:bg-[rgba(39,61,117,0.69)]': article.category.name ==='Cybersécurité'
     }"> {{ article.category.name }} </span>
     </div>
 
 
     <!-- Titre -->
     <a [routerLink]="['/article-single',article.id]"
-      class="text-lg font-semibold text-gray-900 mb-2 break-words hover:text-blue-600 transition">
+      class="text-lg font-semibold text-gray-900 mb-2 break-words hover:text-blue-600 dark:hover:text-[rgb(61,89,161)] transition dark:text-[rgb(212,220,255)]">
       {{ article.title }}
     </a>
 
     <!-- Description avec retour à la ligne et limite de lignes -->
-    <p class="text-sm text-gray-600 mb-4 mt-4  break-words line-clamp-3">
+    <p class="text-sm text-gray-600 mb-4 mt-4  break-words line-clamp-3  dark:text-[rgb(212,220,255)]">
       {{ article.introduction }}
     </p>
 
     <!-- Footer avec date et auteur -->
-    <div class="flex items-center text-sm text-gray-500 mt-6 space-x-4">
-      <div class="flex items-center space-x-1">
+    <div class="flex items-center text-sm text-gray-500 mt-6 space-x-4 dark:text-[rgb(240,243,255)]">
+      <div class="flex items-center space-x-1 dark:text-[rgb(212,220,255)]">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="size-5">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -34,7 +34,7 @@
         </svg>
         <span>{{ article.created_at }}</span>
       </div>
-      <div class="flex items-center space-x-1">
+      <div class="flex items-center space-x-1 dark:text-[rgb(212,220,255)]">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="size-5">
           <path stroke-linecap="round" stroke-linejoin="round"
