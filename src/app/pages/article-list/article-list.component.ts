@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { start } from 'repl';
 import { debounceTime, distinctUntilChanged, startWith, switchMap } from 'rxjs';
+import { Category } from '../../core/models/category';
 
 @Component({
   selector: 'app-article-list',
@@ -26,6 +27,8 @@ export class ArticleListComponent {
   totalCount = 0;
   isLoading = true;
   searchControl = new FormControl('')
+  categoryControl = new FormControl(''); 
+  categories!:Category[]
 
   constructor(private articleService: ArticleService) { }
   ngOnInit():void{
@@ -38,11 +41,12 @@ export class ArticleListComponent {
       }
     )
     this.getArticles()
+    this.getCategories()
   }
 
-  getArticles(page: number = 1,search:string=''): void {
+  getArticles(page: number = 1,search:string='',category__name:string=''): void {
     this.currentPage = page
-    this.articleService.getArticles(page, this.pageSize,{search}).subscribe({
+    this.articleService.getArticles(page, this.pageSize,{search,category__name}).subscribe({
       next: (response) => {
         //debug
         console.log("Article récupéré", response.results)
@@ -65,6 +69,23 @@ export class ArticleListComponent {
 
   goToPage(page: number) {
     this.getArticles(page,this.searchControl.value || '');
+  }
+
+  getArticleByCategory(category__name:string):void{
+    this.getArticles(1,this.searchControl.value || '',category__name)
+    console.log(category__name)
+  }
+
+  getCategories(){
+    this.articleService.getCategories().subscribe({
+      next:(response)=>{
+        this.categories = response
+        console.log("list des categories",response)
+      },
+      error:(error)=>{
+        console.log("erreur", error)
+      }
+    })
   }
 
 }
