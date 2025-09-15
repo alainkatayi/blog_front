@@ -24,6 +24,11 @@ export class ArticleService {
     if(filter.search){
       params = params.set('search',filter.search)
     }
+    if(filter.category__name){
+      params = params.set('category__name',filter.category__name)
+    }
+
+
     return this.http.get<PaginatedResponse>(`${this.url}article/`, {params})
   }
 
